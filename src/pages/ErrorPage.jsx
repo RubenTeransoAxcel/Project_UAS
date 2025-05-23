@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Error from "../assets/error.png";
 
 export default function ErrorPage({
   code = "404",
@@ -26,7 +27,7 @@ export default function ErrorPage({
         {/* Gambar Error */}
         {image && (
           <img
-            src={image}
+            src={Error}
             alt={`Error ${code}`}
             className="w-1/2 max-w-[200px] mx-auto"
           />
