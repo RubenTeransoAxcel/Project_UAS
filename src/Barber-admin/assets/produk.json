@@ -1,0 +1,233 @@
+[
+    {
+      "id": 1,
+      "name": "Pomade Klasik",
+      "price": 45000,
+      "stock": 12,
+      "category": "Styling",
+      "image": "https://arti-assets.sgp1.cdn.digitaloceanspaces.com/renyswalayanku/products/9dbdad3d-620b-4bb8-b908-533d22c21514.jpg",
+      "details": {
+        "description": "Pomade oil-based klasik untuk tampilan rapi sepanjang hari.",
+        "ingredients": ["Petrolatum", "Fragrance", "Beeswax"],
+        "usage": "Gunakan pada rambut kering untuk hasil maksimal."
+      },
+      "manufacturer": {
+        "name": "Barber Bros Co.",
+        "country": "Indonesia",
+        "founded": 2015
+      },
+      "shipping": {
+        "weight": "150g",
+        "dimensions": {"width": "8cm", "height": "4cm", "depth": "8cm"},
+        "international": true
+      }
+    },
+    {
+      "id": 2,
+      "name": "Beard Oil Premium",
+      "price": 60000,
+      "stock": 8,
+      "category": "Perawatan",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuKDj3PJpsIgoeOGMYBUJcqUKNg2bKa3ZraQ&s",
+      "details": {
+        "description": "Minyak jenggot organik untuk kelembutan dan kilau alami.",
+        "ingredients": ["Argan Oil", "Jojoba Oil", "Vitamin E"],
+        "usage": "Teteskan dan ratakan pada jenggot setiap pagi."
+      },
+      "manufacturer": {
+        "name": "The Beard Lab",
+        "country": "USA",
+        "founded": 2012
+      },
+      "shipping": {
+        "weight": "100ml",
+        "dimensions": {"width": "4cm", "height": "10cm", "depth": "4cm"},
+        "international": true
+      }
+    },
+    {
+      "id": 3,
+      "name": "Sisir Anti-Statis",
+      "price": 25000,
+      "stock": 20,
+      "category": "Alat",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD--qj_FZ3czCSZQh8iR1ILD3F2my26U5bww&s",
+      "details": {
+        "description": "Sisir profesional anti-statis untuk semua jenis rambut.",
+        "ingredients": ["Carbon Fiber"],
+        "usage": "Cocok digunakan saat styling basah maupun kering."
+      },
+      "manufacturer": {
+        "name": "Tokyo Tools",
+        "country": "Jepang",
+        "founded": 2001
+      },
+      "shipping": {
+        "weight": "80g",
+        "dimensions": {"width": "5cm", "height": "1cm", "depth": "20cm"},
+        "international": false
+      }
+    },
+    {
+      "id": 4,
+      "name": "Shaving Cream Cool Mint",
+      "price": 32000,
+      "stock": 15,
+      "category": "Pembersih",
+      "image": "https://cdn11.bigcommerce.com/s-4gbza8tb7z/images/stencil/1280x1280/products/2022/4264/CMSC_HERO1_00000_700x__41449.1637703787.png?c=2",
+      "details": {
+        "description": "Krim cukur menyegarkan dengan sensasi mint.",
+        "ingredients": ["Aloe Vera", "Menthol", "Vitamin E"],
+        "usage": "Oleskan ke area wajah sebelum mencukur."
+      },
+      "manufacturer": {
+        "name": "Gentlemen's Choice",
+        "country": "Italia",
+        "founded": 2010
+      },
+      "shipping": {
+        "weight": "100g",
+        "dimensions": {"width": "6cm", "height": "4cm", "depth": "6cm"},
+        "international": true
+      }
+    },
+    {
+      "id": 5,
+      "name": "Hair Tonic Herbal",
+      "price": 55000,
+      "stock": 18,
+      "category": "Perawatan",
+      "image": "https://i.ebayimg.com/images/g/k6sAAOSwhNNmfu3~/s-l1200.jpg",
+      "details": {
+        "description": "Tonic rambut dengan bahan herbal alami.",
+        "ingredients": ["Ginseng", "Aloe Vera", "Peppermint"],
+        "usage": "Tuang pada kulit kepala dan pijat perlahan."
+      },
+      "manufacturer": {
+        "name": "GreenScalp",
+        "country": "Indonesia",
+        "founded": 2008
+      },
+      "shipping": {
+        "weight": "200ml",
+        "dimensions": {"width": "5cm", "height": "12cm", "depth": "5cm"},
+        "international": false
+      }
+    },
+    {
+      "id": 6,
+      "name": "Hair Dryer Mini Pro",
+      "price": 120000,
+      "stock": 5,
+      "category": "Alat",
+      "image": "https://cdn.ruparupa.io/fit-in/400x400/filters:format(webp)/filters:quality(90)/ruparupa-com/image/upload/Products/10546846_1.jpg",
+      "details": {
+        "description": "Hair dryer compact untuk penggunaan profesional.",
+        "ingredients": ["Plastic ABS", "Stainless Coil"],
+        "usage": "Colok dan pilih suhu sesuai kebutuhan."
+      },
+      "manufacturer": {
+        "name": "SalonTech",
+        "country": "Korea Selatan",
+        "founded": 2013
+      },
+      "shipping": {
+        "weight": "400g",
+        "dimensions": {"width": "10cm", "height": "12cm", "depth": "20cm"},
+        "international": true
+      }
+    },
+    {
+      "id": 7,
+      "name": "Pomade Water-Based",
+      "price": 48000,
+      "stock": 10,
+      "category": "Styling",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCY3w6q0MGxXyb4VRfENkz0x5_ydqJNH-grQ&s",
+      "details": {
+        "description": "Pomade mudah dibersihkan dengan air.",
+        "ingredients": ["Water", "Fragrance", "PVP"],
+        "usage": "Gunakan secukupnya pada rambut basah atau kering."
+      },
+      "manufacturer": {
+        "name": "CleanHold",
+        "country": "Malaysia",
+        "founded": 2018
+      },
+      "shipping": {
+        "weight": "130g",
+        "dimensions": {"width": "7cm", "height": "3cm", "depth": "7cm"},
+        "international": false
+      }
+    },
+    {
+      "id": 8,
+      "name": "Hair Gel Extreme Hold",
+      "price": 37000,
+      "stock": 9,
+      "category": "Styling",
+      "image": "https://down-id.img.susercontent.com/file/id-11134207-7rasd-m1qu67bl158104",
+      "details": {
+        "description": "Gel rambut dengan daya tahan tinggi.",
+        "ingredients": ["Alcohol", "Carbomer", "Fragrance"],
+        "usage": "Gunakan untuk gaya spike atau slick back."
+      },
+      "manufacturer": {
+        "name": "FixIt Barber",
+        "country": "Indonesia",
+        "founded": 2011
+      },
+      "shipping": {
+        "weight": "200g",
+        "dimensions": {"width": "8cm", "height": "5cm", "depth": "8cm"},
+        "international": false
+      }
+    },
+    {
+      "id": 9,
+      "name": "Shaving Brush Natural",
+      "price": 40000,
+      "stock": 14,
+      "category": "Alat",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK7FLCyFN9bf18OgKlCoq3yIUCD_wQp8H6aA&s",
+      "details": {
+        "description": "Kuas cukur dengan bulu alami.",
+        "ingredients": ["Kayu", "Natural Bristle"],
+        "usage": "Basahi dan gunakan untuk mengaplikasikan krim cukur."
+      },
+      "manufacturer": {
+        "name": "BrushWorks",
+        "country": "UK",
+        "founded": 2005
+      },
+      "shipping": {
+        "weight": "90g",
+        "dimensions": {"width": "4cm", "height": "10cm", "depth": "4cm"},
+        "international": true
+      }
+    },
+    {
+      "id": 10,
+      "name": "Facial Wash GentleMen",
+      "price": 35000,
+      "stock": 22,
+      "category": "Pembersih",
+      "image": "https://img.nivea.com/-/media/miscellaneous/media-center-items/c/1/f/42284fba307a403499f7cd6578d3c333-web_1010x1180_transparent_png.png",
+      "details": {
+        "description": "Sabun wajah khusus pria dengan pH seimbang.",
+        "ingredients": ["Aqua", "Glycerin", "Green Tea"],
+        "usage": "Basahi wajah, aplikasikan dan bilas hingga bersih."
+      },
+      "manufacturer": {
+        "name": "FaceFit",
+        "country": "Jepang",
+        "founded": 2009
+      },
+      "shipping": {
+        "weight": "150ml",
+        "dimensions": {"width": "5cm", "height": "14cm", "depth": "5cm"},
+        "international": true
+      }
+    }
+  ]
+  

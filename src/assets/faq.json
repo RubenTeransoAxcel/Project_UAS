@@ -1,0 +1,273 @@
+[
+    {
+      "ID": "F001",
+      "Customer Name": "Andi Wijaya",
+      "Question": "Apakah saya bisa request barber tertentu?",
+      "Answer": "Ya, silakan pilih saat reservasi.",
+      "Tanggal": "2025-04-01",
+      "Waktu": "10:15",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F002",
+      "Customer Name": "Citra Lestari",
+      "Question": "Apakah ada layanan cukur alis?",
+      "Answer": "",
+      "Tanggal": "2025-04-01",
+      "Waktu": "11:30",
+      "Feedback": "Tidak Memuaskan"
+    },
+    {
+      "ID": "F003",
+      "Customer Name": "Budi Santoso",
+      "Question": "Berapa lama potong rambut biasanya?",
+      "Answer": "30–45 menit.",
+      "Tanggal": "2025-04-02",
+      "Waktu": "09:45",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F004",
+      "Customer Name": "Eka Putri",
+      "Question": "Apakah tersedia layanan untuk wanita?",
+      "Answer": "Kami fokus pada layanan pria, namun facial bisa digunakan wanita.",
+      "Tanggal": "2025-04-02",
+      "Waktu": "13:20",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F005",
+      "Customer Name": "Fajar Nugroho",
+      "Question": "Apakah saya bisa batalkan reservasi?",
+      "Answer": "Bisa, maksimal 1 jam sebelum waktu reservasi.",
+      "Tanggal": "2025-04-03",
+      "Waktu": "15:00",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F006",
+      "Customer Name": "Gita Sari",
+      "Question": "Ada promo untuk pelanggan baru?",
+      "Answer": "Ya, diskon 10% untuk kunjungan pertama.",
+      "Tanggal": "2025-04-03",
+      "Waktu": "16:45",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F007",
+      "Customer Name": "Hariyanto",
+      "Question": "Apa produk yang digunakan untuk facial?",
+      "Answer": "Kami menggunakan produk lokal dengan bahan alami.",
+      "Tanggal": "2025-04-04",
+      "Waktu": "10:10",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F008",
+      "Customer Name": "Indah Ramadhani",
+      "Question": "Apakah ada layanan hair coloring?",
+      "Answer": "Ya, tersedia hair coloring untuk pria.",
+      "Tanggal": "2025-04-04",
+      "Waktu": "12:30",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F009",
+      "Customer Name": "Joko Susilo",
+      "Question": "Berapa harga haircut + cuci?",
+      "Answer": "Rp 55.000",
+      "Tanggal": "2025-04-05",
+      "Waktu": "09:00",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F010",
+      "Customer Name": "Kiki Apriani",
+      "Question": "Apakah ada biaya tambahan untuk facial?",
+      "Answer": "",
+      "Tanggal": "2025-04-05",
+      "Waktu": "14:15",
+      "Feedback": "Tidak Memuaskan"
+    },
+    {
+      "ID": "F011",
+      "Customer Name": "Lutfi Hakim",
+      "Question": "Bisakah saya bayar dengan QRIS?",
+      "Answer": "Ya, kami menerima QRIS.",
+      "Tanggal": "2025-04-06",
+      "Waktu": "11:00",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F012",
+      "Customer Name": "Maria Ulfa",
+      "Question": "Apakah tempat ini ramah difabel?",
+      "Answer": "Ya, akses kursi roda tersedia.",
+      "Tanggal": "2025-04-06",
+      "Waktu": "13:45",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F013",
+      "Customer Name": "Nanda Putra",
+      "Question": "Berapa usia minimum pewarnaan rambut?",
+      "Answer": "18 tahun ke atas.",
+      "Tanggal": "2025-04-07",
+      "Waktu": "10:30",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F014",
+      "Customer Name": "Olivia Hadi",
+      "Question": "Bisa request gaya potong tertentu?",
+      "Answer": "Tentu, bisa bawa referensi gambar.",
+      "Tanggal": "2025-04-07",
+      "Waktu": "15:00",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F015",
+      "Customer Name": "Pandu Riyadi",
+      "Question": "Apakah tersedia tempat parkir?",
+      "Answer": "Ya, tersedia untuk motor dan mobil.",
+      "Tanggal": "2025-04-08",
+      "Waktu": "09:00",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F016",
+      "Customer Name": "Qory Maulana",
+      "Question": "Apakah bisa custom paket layanan?",
+      "Answer": "",
+      "Tanggal": "2025-04-08",
+      "Waktu": "14:30",
+      "Feedback": "Tidak Memuaskan"
+    },
+    {
+      "ID": "F017",
+      "Customer Name": "Rina Oktaviani",
+      "Question": "Apakah tersedia layanan panggil ke rumah?",
+      "Answer": "Belum tersedia untuk saat ini.",
+      "Tanggal": "2025-04-09",
+      "Waktu": "12:00",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F018",
+      "Customer Name": "Sandi Wirawan",
+      "Question": "Berapa harga facial standar?",
+      "Answer": "Rp 60.000",
+      "Tanggal": "2025-04-09",
+      "Waktu": "16:00",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F019",
+      "Customer Name": "Tari Andini",
+      "Question": "Apakah ada WiFi gratis?",
+      "Answer": "Ya, tersedia di ruang tunggu.",
+      "Tanggal": "2025-04-10",
+      "Waktu": "11:30",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F020",
+      "Customer Name": "Umar Syahputra",
+      "Question": "Apakah layanan bisa diulang jika tidak puas?",
+      "Answer": "Ya, kami beri koreksi tanpa biaya.",
+      "Tanggal": "2025-04-10",
+      "Waktu": "13:00",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F021",
+      "Customer Name": "Vina Melati",
+      "Question": "Produk perawatan apa yang dijual di sini?",
+      "Answer": "Pomade, beard oil, dan shampoo.",
+      "Tanggal": "2025-04-11",
+      "Waktu": "10:45",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F022",
+      "Customer Name": "Wawan Hermawan",
+      "Question": "Bagaimana sistem antrian di tempat?",
+      "Answer": "Menggunakan sistem nomor dan reservasi online.",
+      "Tanggal": "2025-04-11",
+      "Waktu": "15:20",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F023",
+      "Customer Name": "Xena Rahma",
+      "Question": "Apakah ada kursi untuk anak-anak?",
+      "Answer": "",
+      "Tanggal": "2025-04-12",
+      "Waktu": "09:15",
+      "Feedback": "Tidak Memuaskan"
+    },
+    {
+      "ID": "F024",
+      "Customer Name": "Yuda Prasetyo",
+      "Question": "Apakah bisa memilih waktu barber istirahat?",
+      "Answer": "",
+      "Tanggal": "2025-04-12",
+      "Waktu": "13:45",
+      "Feedback": "Tidak Memuaskan"
+    },
+    {
+      "ID": "F025",
+      "Customer Name": "Zahra Kamila",
+      "Question": "Apakah tempat ini bersih dan steril?",
+      "Answer": "Kami menggunakan peralatan steril dan standar kebersihan tinggi.",
+      "Tanggal": "2025-04-13",
+      "Waktu": "10:00",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F026",
+      "Customer Name": "Rafi Gunawan",
+      "Question": "Apakah ada layanan sebelum jam 9 pagi?",
+      "Answer": "Tidak, kami buka mulai pukul 09.00.",
+      "Tanggal": "2025-04-13",
+      "Waktu": "08:00",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F027",
+      "Customer Name": "Mega Ayu",
+      "Question": "Apakah layanan tersedia saat hari libur nasional?",
+      "Answer": "Ya, buka seperti biasa kecuali Lebaran & Tahun Baru.",
+      "Tanggal": "2025-04-14",
+      "Waktu": "14:00",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F028",
+      "Customer Name": "Dimas Aditya",
+      "Question": "Apakah ada kursi tunggu khusus keluarga?",
+      "Answer": "",
+      "Tanggal": "2025-04-14",
+      "Waktu": "15:30",
+      "Feedback": "Tidak Memuaskan"
+    },
+    {
+      "ID": "F029",
+      "Customer Name": "Salsa Maulida",
+      "Question": "Apakah bisa potong rambut untuk bayi?",
+      "Answer": "Ya, untuk bayi di atas 6 bulan.",
+      "Tanggal": "2025-04-15",
+      "Waktu": "10:30",
+      "Feedback": "Memuaskan"
+    },
+    {
+      "ID": "F030",
+      "Customer Name": "Kevin Sanjaya",
+      "Question": "Apakah bisa konsultasi gaya rambut gratis?",
+      "Answer": "Ya, konsultasi tersedia sebelum potong rambut.",
+      "Tanggal": "2025-04-15",
+      "Waktu": "12:00",
+      "Feedback": "Memuaskan"
+    }
+  ]
+  

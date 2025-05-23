@@ -1,0 +1,12 @@
+{
+  "id": 1,
+  "namaPerusahaan": "Barber Shop Sejahtera",
+  "alamat": "Jl. Merdeka No. 45, Jakarta Selatan, Indonesia",
+  "telepon": "+62 812-3456-7890",
+  "email": "info@barbershopsejahtera.co.id",
+  "jamOperasional": {
+    "senin-jumat": "09:00 - 20:00",
+    "sabtu-minggu": "10:00 - 18:00"
+  },
+  "deskripsi": "Barber Shop Sejahtera adalah penyedia layanan potong rambut dan grooming profesional dengan pengalaman lebih dari 10 tahun. Kami mengutamakan kualitas layanan dan kepuasan pelanggan dengan tenaga ahli berpengalaman serta suasana nyaman dan modern."
+}

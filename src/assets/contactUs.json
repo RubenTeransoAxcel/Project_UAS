@@ -1,0 +1,392 @@
+[
+  {
+    "id": 1,
+    "user": {
+      "nama": "Andi Saputra",
+      "email": "andi.saputra@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=21"
+    },
+    "kontak": {
+      "tujuan": "Ingin melakukan reservasi untuk minggu depan",
+      "pesan": "Halo, saya ingin menanyakan apakah tersedia slot untuk potong rambut hari Sabtu pukul 10 pagi?"
+    },
+    "tanggal": "2025-05-17"
+  },
+  {
+    "id": 2,
+    "user": {
+      "nama": "Dewi Lestari",
+      "email": "dewi.lestari@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=22"
+    },
+    "kontak": {
+      "tujuan": "Komplain atas pelayanan",
+      "pesan": "Saya merasa kurang puas dengan hasil potongan rambut kemarin. Mohon bantuannya untuk perbaikan."
+    },
+    "tanggal": "2025-05-16"
+  },
+  {
+    "id": 3,
+    "user": {
+      "nama": "Fajar Nugroho",
+      "email": "fajar.nugroho@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=23"
+    },
+    "kontak": {
+      "tujuan": "Ingin bekerja sama sebagai partner",
+      "pesan": "Kami dari PT. Media Solusi tertarik bekerja sama dalam promosi layanan Anda."
+    },
+    "tanggal": "2025-05-15"
+  },
+  {
+    "id": 4,
+    "user": {
+      "nama": "Lina Marlina",
+      "email": "lina.marlina@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=24"
+    },
+    "kontak": {
+      "tujuan": "Menanyakan promo potong rambut",
+      "pesan": "Apakah ada promo khusus potong rambut di akhir pekan ini?"
+    },
+    "tanggal": "2025-05-14"
+  },
+  {
+    "id": 5,
+    "user": {
+      "nama": "Rizky Ramadhan",
+      "email": "rizky.ramadhan@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=25"
+    },
+    "kontak": {
+      "tujuan": "Feedback layanan",
+      "pesan": "Layanannya sangat baik, terima kasih. Saya akan datang lagi!"
+    },
+    "tanggal": "2025-05-14"
+  },
+  {
+    "id": 6,
+    "user": {
+      "nama": "Putri Anjani",
+      "email": "putri.anjani@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=26"
+    },
+    "kontak": {
+      "tujuan": "Pertanyaan jadwal barber",
+      "pesan": "Apakah saya bisa memilih barber tertentu saat reservasi?"
+    },
+    "tanggal": "2025-05-13"
+  },
+  {
+    "id": 7,
+    "user": {
+      "nama": "Bayu Kurniawan",
+      "email": "bayu.kurniawan@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=27"
+    },
+    "kontak": {
+      "tujuan": "Saran untuk barbershop",
+      "pesan": "Mungkin bisa ditambahkan minuman gratis untuk pelanggan yang menunggu."
+    },
+    "tanggal": "2025-05-13"
+  },
+  {
+    "id": 8,
+    "user": {
+      "nama": "Maya Sari",
+      "email": "maya.sari@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=28"
+    },
+    "kontak": {
+      "tujuan": "Ingin bertanya tentang hair spa",
+      "pesan": "Apakah barbershop ini juga melayani hair spa?"
+    },
+    "tanggal": "2025-05-12"
+  },
+  {
+    "id": 9,
+    "user": {
+      "nama": "Rendy Saputra",
+      "email": "rendy.saputra@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=29"
+    },
+    "kontak": {
+      "tujuan": "Pertanyaan paket langganan",
+      "pesan": "Apakah ada paket bulanan untuk potong rambut rutin?"
+    },
+    "tanggal": "2025-05-12"
+  },
+  {
+    "id": 10,
+    "user": {
+      "nama": "Siti Aisyah",
+      "email": "siti.aisyah@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=30"
+    },
+    "kontak": {
+      "tujuan": "Pemesanan grup",
+      "pesan": "Saya ingin memesan untuk 5 orang sekaligus, apakah bisa?"
+    },
+    "tanggal": "2025-05-11"
+  },
+  {
+    "id": 11,
+    "user": {
+      "nama": "Tono Wijaya",
+      "email": "tono.wijaya@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=31"
+    },
+    "kontak": {
+      "tujuan": "Request potong model terbaru",
+      "pesan": "Saya ingin coba model fade undercut, apakah bisa?"
+    },
+    "tanggal": "2025-05-11"
+  },
+  {
+    "id": 12,
+    "user": {
+      "nama": "Rahmawati",
+      "email": "rahma.wati@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=32"
+    },
+    "kontak": {
+      "tujuan": "Komplain keterlambatan",
+      "pesan": "Saya harus menunggu lebih dari 30 menit walaupun sudah reservasi."
+    },
+    "tanggal": "2025-05-10"
+  },
+  {
+    "id": 13,
+    "user": {
+      "nama": "Agus Supriyadi",
+      "email": "agus.supriyadi@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=33"
+    },
+    "kontak": {
+      "tujuan": "Ingin bertanya sistem loyalty",
+      "pesan": "Apakah saya mendapatkan poin jika sering potong di sini?"
+    },
+    "tanggal": "2025-05-10"
+  },
+  {
+    "id": 14,
+    "user": {
+      "nama": "Desi Marlina",
+      "email": "desi.marlina@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=34"
+    },
+    "kontak": {
+      "tujuan": "Konfirmasi pembayaran",
+      "pesan": "Saya sudah bayar via transfer, mohon dicek ya kak."
+    },
+    "tanggal": "2025-05-09"
+  },
+  {
+    "id": 15,
+    "user": {
+      "nama": "Yusuf Maulana",
+      "email": "yusuf.maulana@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=35"
+    },
+    "kontak": {
+      "tujuan": "Pertanyaan tentang membership",
+      "pesan": "Ada diskon khusus member nggak kak?"
+    },
+    "tanggal": "2025-05-09"
+  },
+  {
+    "id": 16,
+    "user": {
+      "nama": "Karina Puspita",
+      "email": "karina.puspita@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=36"
+    },
+    "kontak": {
+      "tujuan": "Ucapan terima kasih",
+      "pesan": "Sudah potong 3x di sini dan selalu puas. Terima kasih!"
+    },
+    "tanggal": "2025-05-08"
+  },
+  {
+    "id": 17,
+    "user": {
+      "nama": "Imam Santoso",
+      "email": "imam.santoso@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=37"
+    },
+    "kontak": {
+      "tujuan": "Keluhan harga berubah",
+      "pesan": "Kenapa harga layanan naik dibanding minggu lalu?"
+    },
+    "tanggal": "2025-05-08"
+  },
+  {
+    "id": 18,
+    "user": {
+      "nama": "Silvia Yunita",
+      "email": "silvia.yunita@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=38"
+    },
+    "kontak": {
+      "tujuan": "Saran penambahan layanan",
+      "pesan": "Akan lebih menarik jika ada layanan coloring atau facial juga."
+    },
+    "tanggal": "2025-05-07"
+  },
+  {
+    "id": 19,
+    "user": {
+      "nama": "Doni Haryanto",
+      "email": "doni.haryanto@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=39"
+    },
+    "kontak": {
+      "tujuan": "Tanya jam operasional",
+      "pesan": "Apakah buka hari Minggu dan sampai jam berapa?"
+    },
+    "tanggal": "2025-05-07"
+  },
+  {
+    "id": 20,
+    "user": {
+      "nama": "Ratna Dewi",
+      "email": "ratna.dewi@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=40"
+    },
+    "kontak": {
+      "tujuan": "Ingin mengatur ulang reservasi",
+      "pesan": "Saya ingin mengganti jadwal reservasi hari Jumat ke Sabtu."
+    },
+    "tanggal": "2025-05-06"
+  },
+  {
+    "id": 21,
+    "user": {
+      "nama": "Tari Nurhadi",
+      "email": "tari.nurhadi@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=41"
+    },
+    "kontak": {
+      "tujuan": "Permintaan layanan khusus",
+      "pesan": "Apakah bisa potong rambut plus cukur kumis sekaligus?"
+    },
+    "tanggal": "2025-05-06"
+  },
+  {
+    "id": 22,
+    "user": {
+      "nama": "Hendra Gunawan",
+      "email": "hendra.gunawan@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=42"
+    },
+    "kontak": {
+      "tujuan": "Tanya layanan anak-anak",
+      "pesan": "Apakah menerima potong rambut anak usia 5 tahun?"
+    },
+    "tanggal": "2025-05-05"
+  },
+  {
+    "id": 23,
+    "user": {
+      "nama": "Nina Kristiani",
+      "email": "nina.kristiani@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=43"
+    },
+    "kontak": {
+      "tujuan": "Pertanyaan pembayaran",
+      "pesan": "Apakah bisa bayar dengan e-wallet seperti OVO atau Dana?"
+    },
+    "tanggal": "2025-05-05"
+  },
+  {
+    "id": 24,
+    "user": {
+      "nama": "Rama Pratama",
+      "email": "rama.pratama@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=44"
+    },
+    "kontak": {
+      "tujuan": "Request barber favorit",
+      "pesan": "Saya ingin dilayani oleh barber Andi jika tersedia."
+    },
+    "tanggal": "2025-05-04"
+  },
+  {
+    "id": 25,
+    "user": {
+      "nama": "Sari Wulandari",
+      "email": "sari.wulandari@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=45"
+    },
+    "kontak": {
+      "tujuan": "Ucapan terima kasih dan review",
+      "pesan": "Barbershopnya nyaman dan pelayanannya ramah. Terima kasih!"
+    },
+    "tanggal": "2025-05-04"
+  },
+  {
+    "id": 26,
+    "user": {
+      "nama": "Yoga Prasetyo",
+      "email": "yoga.prasetyo@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=46"
+    },
+    "kontak": {
+      "tujuan": "Pertanyaan promo bundling",
+      "pesan": "Apakah ada promo potong rambut plus creambath?"
+    },
+    "tanggal": "2025-05-03"
+  },
+  {
+    "id": 27,
+    "user": {
+      "nama": "Fitri Handayani",
+      "email": "fitri.handayani@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=47"
+    },
+    "kontak": {
+      "tujuan": "Pertanyaan garansi potong rambut",
+      "pesan": "Apakah bisa perbaikan gratis jika hasil potong kurang sesuai?"
+    },
+    "tanggal": "2025-05-03"
+  },
+  {
+    "id": 28,
+    "user": {
+      "nama": "Arif Budiman",
+      "email": "arif.budiman@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=48"
+    },
+    "kontak": {
+      "tujuan": "Ingin tahu jam kerja barber tertentu",
+      "pesan": "Jam kerja barber Joko dari jam berapa sampai jam berapa?"
+    },
+    "tanggal": "2025-05-02"
+  },
+  {
+    "id": 29,
+    "user": {
+      "nama": "Nadia Safitri",
+      "email": "nadia.safitri@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=49"
+    },
+    "kontak": {
+      "tujuan": "Pemesanan untuk event keluarga",
+      "pesan": "Apakah bisa potong rambut di tempat untuk acara keluarga?"
+    },
+    "tanggal": "2025-05-02"
+  },
+  {
+    "id": 30,
+    "user": {
+      "nama": "Budi Santoso",
+      "email": "budi.santoso@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=50"
+    },
+    "kontak": {
+      "tujuan": "Tanya cara cancel reservasi",
+      "pesan": "Bagaimana cara membatalkan reservasi yang sudah dibuat?"
+    },
+    "tanggal": "2025-05-01"
+  }
+]

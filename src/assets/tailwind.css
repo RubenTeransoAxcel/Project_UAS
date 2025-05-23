@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Poppins";
+    src: url('/Fonts/Poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Poppins-ExBold";
+    src: url('/Fonts/Poppins/Poppins-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: "Barlow";
+    src: url('/Fonts/Barlow/Barlow-Regular.ttf');
+}
+
+@theme {
+    --font-barlow: "Barlow", sans-serif;
+    --font-poppins: "Poppins", sans-serif;
+    --font-poppins-exbold: "Poppins-ExBold", sans-serif;
+
+    --color-latar: #f3f4f6;
+    --color-teks: #374151; 
+    --color-teks-samping: #6b7280;
+    --color-garis: #e5e7eb; 
+    --color-hijau: #00B074; 
+    --color-merah: #ef4444; 
+    --color-biru: #3b82f6;
+    --color-kuning: #f59e0b;
+    --color-coklat2: #5C332D;
+    --color-coklat: #7c342c;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animasi Fade In */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out both;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.input {
+  @apply w-full p-2 border rounded text-sm;
+}

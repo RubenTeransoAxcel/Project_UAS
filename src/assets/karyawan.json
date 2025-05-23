@@ -1,0 +1,302 @@
+[
+    {
+        "Karyawan ID": "K001",
+        "Name": "Andi Saputra",
+        "Email": "andi.saputra@barberbros.com",
+        "Phone": "081234567001",
+        "Alamat": "Jl. Melati No. 5, Jakarta",
+        "Jabatan": "Senior Barber",
+        "Tanggal Masuk": "2020-01-15",
+        "Foto": "https://randomuser.me/api/portraits/men/11.jpg"
+    },
+    {
+        "Karyawan ID": "K002",
+        "Name": "Budi Santoso",
+        "Email": "budi.santoso@barberbros.com",
+        "Phone": "081234567002",
+        "Alamat": "Jl. Kenanga No. 10, Bandung",
+        "Jabatan": "Junior Barber",
+        "Tanggal Masuk": "2021-03-12",
+        "Foto": "https://randomuser.me/api/portraits/men/12.jpg"
+    },
+    {
+        "Karyawan ID": "K003",
+        "Name": "Citra Maharani",
+        "Email": "citra.maharani@barberbros.com",
+        "Phone": "081234567003",
+        "Alamat": "Jl. Anggrek No. 7, Surabaya",
+        "Jabatan": "Resepsionis",
+        "Tanggal Masuk": "2022-06-05",
+        "Foto": "https://randomuser.me/api/portraits/women/13.jpg"
+    },
+    {
+        "Karyawan ID": "K004",
+        "Name": "Dimas Pratama",
+        "Email": "dimas.pratama@barberbros.com",
+        "Phone": "081234567004",
+        "Alamat": "Jl. Mawar No. 2, Bekasi",
+        "Jabatan": "Barber",
+        "Tanggal Masuk": "2019-10-01",
+        "Foto": "https://randomuser.me/api/portraits/men/14.jpg"
+    },
+    {
+        "Karyawan ID": "K005",
+        "Name": "Eka Putri",
+        "Email": "eka.putri@barberbros.com",
+        "Phone": "081234567005",
+        "Alamat": "Jl. Flamboyan No. 3, Yogyakarta",
+        "Jabatan": "Admin",
+        "Tanggal Masuk": "2020-08-20",
+        "Foto": "https://randomuser.me/api/portraits/women/15.jpg"
+    },
+    {
+        "Karyawan ID": "K006",
+        "Name": "Fajar Nugroho",
+        "Email": "fajar.nugroho@barberbros.com",
+        "Phone": "081234567006",
+        "Alamat": "Jl. Dahlia No. 9, Depok",
+        "Jabatan": "Barber",
+        "Tanggal Masuk": "2021-02-14",
+        "Foto": "https://randomuser.me/api/portraits/men/16.jpg"
+    },
+    {
+        "Karyawan ID": "K007",
+        "Name": "Gita Sari",
+        "Email": "gita.sari@barberbros.com",
+        "Phone": "081234567007",
+        "Alamat": "Jl. Cendana No. 6, Tangerang",
+        "Jabatan": "Kasir",
+        "Tanggal Masuk": "2022-01-10",
+        "Foto": "https://randomuser.me/api/portraits/women/17.jpg"
+    },
+    {
+        "Karyawan ID": "K008",
+        "Name": "Hariyanto",
+        "Email": "hariyanto@barberbros.com",
+        "Phone": "081234567008",
+        "Alamat": "Jl. Cemara No. 4, Bogor",
+        "Jabatan": "Senior Barber",
+        "Tanggal Masuk": "2018-09-25",
+        "Foto": "https://randomuser.me/api/portraits/men/18.jpg"
+    },
+    {
+        "Karyawan ID": "K009",
+        "Name": "Indah Ramadhani",
+        "Email": "indah.ramadhani@barberbros.com",
+        "Phone": "081234567009",
+        "Alamat": "Jl. Teratai No. 11, Semarang",
+        "Jabatan": "Resepsionis",
+        "Tanggal Masuk": "2021-11-18",
+        "Foto": "https://randomuser.me/api/portraits/women/19.jpg"
+    },
+    {
+        "Karyawan ID": "K010",
+        "Name": "Joko Susilo",
+        "Email": "joko.susilo@barberbros.com",
+        "Phone": "081234567010",
+        "Alamat": "Jl. Nusa Indah No. 8, Medan",
+        "Jabatan": "Barber",
+        "Tanggal Masuk": "2020-04-28",
+        "Foto": "https://randomuser.me/api/portraits/men/20.jpg"
+    },
+    {
+        "Karyawan ID": "K011",
+        "Name": "Kiki Apriani",
+        "Email": "kiki.apriani@barberbros.com",
+        "Phone": "081234567011",
+        "Alamat": "Jl. Aster No. 1, Jakarta",
+        "Jabatan": "Kasir",
+        "Tanggal Masuk": "2021-09-17",
+        "Foto": "https://randomuser.me/api/portraits/women/21.jpg"
+    },
+    {
+        "Karyawan ID": "K012",
+        "Name": "Lutfi Hakim",
+        "Email": "lutfi.hakim@barberbros.com",
+        "Phone": "081234567012",
+        "Alamat": "Jl. Sawo No. 12, Bandung",
+        "Jabatan": "Barber",
+        "Tanggal Masuk": "2020-05-19",
+        "Foto": "https://randomuser.me/api/portraits/men/22.jpg"
+    },
+    {
+        "Karyawan ID": "K013",
+        "Name": "Maria Ulfa",
+        "Email": "maria.ulfa@barberbros.com",
+        "Phone": "081234567013",
+        "Alamat": "Jl. Jambu No. 15, Surabaya",
+        "Jabatan": "Admin",
+        "Tanggal Masuk": "2022-03-10",
+        "Foto": "https://randomuser.me/api/portraits/women/23.jpg"
+    },
+    {
+        "Karyawan ID": "K014",
+        "Name": "Nanda Putra",
+        "Email": "nanda.putra@barberbros.com",
+        "Phone": "081234567014",
+        "Alamat": "Jl. Salak No. 3, Bekasi",
+        "Jabatan": "Barber",
+        "Tanggal Masuk": "2021-07-22",
+        "Foto": "https://randomuser.me/api/portraits/men/24.jpg"
+    },
+    {
+        "Karyawan ID": "K015",
+        "Name": "Olivia Hadi",
+        "Email": "olivia.hadi@barberbros.com",
+        "Phone": "081234567015",
+        "Alamat": "Jl. Srikaya No. 7, Yogyakarta",
+        "Jabatan": "Resepsionis",
+        "Tanggal Masuk": "2023-01-05",
+        "Foto": "https://randomuser.me/api/portraits/women/25.jpg"
+    },
+    {
+        "Karyawan ID": "K016",
+        "Name": "Pandu Riyadi",
+        "Email": "pandu.riyadi@barberbros.com",
+        "Phone": "081234567016",
+        "Alamat": "Jl. Kelapa No. 9, Depok",
+        "Jabatan": "Senior Barber",
+        "Tanggal Masuk": "2019-06-11",
+        "Foto": "https://randomuser.me/api/portraits/men/26.jpg"
+    },
+    {
+        "Karyawan ID": "K017",
+        "Name": "Qory Maulana",
+        "Email": "qory.maulana@barberbros.com",
+        "Phone": "081234567017",
+        "Alamat": "Jl. Durian No. 10, Tangerang",
+        "Jabatan": "Barber",
+        "Tanggal Masuk": "2022-02-18",
+        "Foto": "https://randomuser.me/api/portraits/men/27.jpg"
+    },
+    {
+        "Karyawan ID": "K018",
+        "Name": "Rina Oktaviani",
+        "Email": "rina.oktaviani@barberbros.com",
+        "Phone": "081234567018",
+        "Alamat": "Jl. Kedondong No. 5, Bogor",
+        "Jabatan": "Admin",
+        "Tanggal Masuk": "2020-07-14",
+        "Foto": "https://randomuser.me/api/portraits/women/28.jpg"
+    },
+    {
+        "Karyawan ID": "K019",
+        "Name": "Sandi Wirawan",
+        "Email": "sandi.wirawan@barberbros.com",
+        "Phone": "081234567019",
+        "Alamat": "Jl. Duku No. 2, Semarang",
+        "Jabatan": "Barber",
+        "Tanggal Masuk": "2021-12-21",
+        "Foto": "https://randomuser.me/api/portraits/men/29.jpg"
+    },
+    {
+        "Karyawan ID": "K020",
+        "Name": "Tari Andini",
+        "Email": "tari.andini@barberbros.com",
+        "Phone": "081234567020",
+        "Alamat": "Jl. Manggis No. 6, Medan",
+        "Jabatan": "Kasir",
+        "Tanggal Masuk": "2022-11-11",
+        "Foto": "https://randomuser.me/api/portraits/women/30.jpg"
+    },
+    {
+        "Karyawan ID": "K021",
+        "Name": "Umar Syahputra",
+        "Email": "umar.syahputra@barberbros.com",
+        "Phone": "081234567021",
+        "Alamat": "Jl. Mangga No. 13, Jakarta",
+        "Jabatan": "Barber",
+        "Tanggal Masuk": "2020-03-03",
+        "Foto": "https://randomuser.me/api/portraits/men/31.jpg"
+    },
+    {
+        "Karyawan ID": "K022",
+        "Name": "Vina Melati",
+        "Email": "vina.melati@barberbros.com",
+        "Phone": "081234567022",
+        "Alamat": "Jl. Pisang No. 5, Bandung",
+        "Jabatan": "Admin",
+        "Tanggal Masuk": "2021-08-19",
+        "Foto": "https://randomuser.me/api/portraits/women/32.jpg"
+    },
+    {
+        "Karyawan ID": "K023",
+        "Name": "Wawan Hermawan",
+        "Email": "wawan.hermawan@barberbros.com",
+        "Phone": "081234567023",
+        "Alamat": "Jl. Alpukat No. 1, Surabaya",
+        "Jabatan": "Barber",
+        "Tanggal Masuk": "2019-05-05",
+        "Foto": "https://randomuser.me/api/portraits/men/33.jpg"
+    },
+    {
+        "Karyawan ID": "K024",
+        "Name": "Xena Rahma",
+        "Email": "xena.rahma@barberbros.com",
+        "Phone": "081234567024",
+        "Alamat": "Jl. Duren No. 4, Bekasi",
+        "Jabatan": "Resepsionis",
+        "Tanggal Masuk": "2022-04-09",
+        "Foto": "https://randomuser.me/api/portraits/women/34.jpg"
+    },
+    {
+        "Karyawan ID": "K025",
+        "Name": "Yuda Prasetyo",
+        "Email": "yuda.prasetyo@barberbros.com",
+        "Phone": "081234567025",
+        "Alamat": "Jl. Nangka No. 11, Yogyakarta",
+        "Jabatan": "Senior Barber",
+        "Tanggal Masuk": "2018-10-23",
+        "Foto": "https://randomuser.me/api/portraits/men/35.jpg"
+    },
+    {
+        "Karyawan ID": "K026",
+        "Name": "Zahra Kamila",
+        "Email": "zahra.kamila@barberbros.com",
+        "Phone": "081234567026",
+        "Alamat": "Jl. Rambutan No. 6, Depok",
+        "Jabatan": "Admin",
+        "Tanggal Masuk": "2020-01-10",
+        "Foto": "https://randomuser.me/api/portraits/women/36.jpg"
+    },
+    {
+        "Karyawan ID": "K027",
+        "Name": "Rafi Gunawan",
+        "Email": "rafi.gunawan@barberbros.com",
+        "Phone": "081234567027",
+        "Alamat": "Jl. Sirsak No. 7, Tangerang",
+        "Jabatan": "Barber",
+        "Tanggal Masuk": "2023-02-02",
+        "Foto": "https://randomuser.me/api/portraits/men/37.jpg"
+    },
+    {
+        "Karyawan ID": "K028",
+        "Name": "Mega Ayu",
+        "Email": "mega.ayu@barberbros.com",
+        "Phone": "081234567028",
+        "Alamat": "Jl. Sukun No. 8, Bogor",
+        "Jabatan": "Kasir",
+        "Tanggal Masuk": "2021-06-06",
+        "Foto": "https://randomuser.me/api/portraits/women/38.jpg"
+    },
+    {
+        "Karyawan ID": "K029",
+        "Name": "Dimas Aditya",
+        "Email": "dimas.aditya@barberbros.com",
+        "Phone": "081234567029",
+        "Alamat": "Jl. Langsat No. 2, Semarang",
+        "Jabatan": "Barber",
+        "Tanggal Masuk": "2020-09-29",
+        "Foto": "https://randomuser.me/api/portraits/men/39.jpg"
+    },
+    {
+        "Karyawan ID": "K030",
+        "Name": "Salsa Maulida",
+        "Email": "salsa.maulida@barberbros.com",
+        "Phone": "081234567030",
+        "Alamat": "Jl. Kedoya No. 9, Medan",
+        "Jabatan": "Resepsionis",
+        "Tanggal Masuk": "2022-08-08",
+        "Foto": "https://randomuser.me/api/portraits/women/40.jpg"
+    }
+]
