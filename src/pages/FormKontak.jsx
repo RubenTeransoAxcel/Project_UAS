@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PageHeader from "../components/PageHeader";
 import data from "../assets/contactUs.json";
 import Pagination from "../components/Pagination";
+import { Link } from "react-router-dom";
 
 const itemsPerPage = 10;
 
@@ -31,7 +32,10 @@ export default function FormKontakTable() {
   // Pagination data
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentItems = filteredData.slice(startIndex, startIndex + itemsPerPage);
+  const currentItems = filteredData.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
 
   // Pagination handlers
   const handleNext = () => {
@@ -72,7 +76,10 @@ export default function FormKontakTable() {
 
   return (
     <div className="flex flex-col w-full">
-      <PageHeader title="Form Kontak" breadcrumb={["Dashboard", "Form Kontak"]} />
+      <PageHeader
+        title="Form Kontak"
+        breadcrumb={["Dashboard", "Form Kontak"]}
+      />
 
       <div className="p-6 bg-white rounded-xl shadow-md">
         <h2 className="text-2xl font-bold mb-4">Daftar Form Kontak</h2>
@@ -105,13 +112,27 @@ export default function FormKontakTable() {
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-100">
               <tr>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Avatar</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Nama</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Email</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Tujuan</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Pesan</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Tanggal</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Jawaban Admin</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                  Avatar
+                </th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                  Nama
+                </th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                  Email
+                </th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                  Tujuan
+                </th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                  Pesan
+                </th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                  Tanggal
+                </th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                  Jawaban Admin
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
@@ -124,10 +145,21 @@ export default function FormKontakTable() {
                       className="w-10 h-10 rounded-full"
                     />
                   </td>
-                  <td className="px-4 py-2 font-medium text-gray-800">{item.user.nama}</td>
+                  <td className="px-4 py-2 font-medium text-gray-800">
+                    <Link
+                      to={`/contactUs/${item.id}`}
+                      className="text-blue-600 hover:underline"
+                    >
+                      {item.user.nama}
+                    </Link>
+                  </td>
                   <td className="px-4 py-2 text-gray-600">{item.user.email}</td>
-                  <td className="px-4 py-2 text-gray-600">{item.kontak.tujuan}</td>
-                  <td className="px-4 py-2 text-gray-600 max-w-xs break-words">{item.kontak.pesan}</td>
+                  <td className="px-4 py-2 text-gray-600">
+                    {item.kontak.tujuan}
+                  </td>
+                  <td className="px-4 py-2 text-gray-600 max-w-xs break-words">
+                    {item.kontak.pesan}
+                  </td>
                   <td className="px-4 py-2 text-gray-600">{item.tanggal}</td>
                   <td className="px-4 py-2">
                     {editingId === item.id ? (

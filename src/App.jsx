@@ -10,7 +10,9 @@ const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const Users = React.lazy(() => import("./pages/User"));
 const ErrorPage = React.lazy(() => import("./pages/ErrorPage"));
 const Reservasi = React.lazy(() => import("./pages/Reservasi"));
+const ReservasiDetail = React.lazy(() => import("./pages/ReservasiDetail"));
 const Produk = React.lazy(() => import("./pages/Produk"));
+const ProdukDetail = React.lazy(() => import("./pages/ProdukDetail"));
 const AddProduct = React.lazy(() => import("./pages/AddProduk"));
 const EditProduct = React.lazy(() => import("./pages/EditProduct"));
 const FAQ = React.lazy(() => import("./pages/FAQ"));
@@ -19,7 +21,9 @@ const ProfilTambah = React.lazy(() => import("./pages/ProfilTambah"));
 const ProfilEdit = React.lazy(() => import("./pages/ProfilEdit"));
 const Testimoni = React.lazy(() => import("./pages/Testimoni"));
 const ContactUs = React.lazy(() => import("./pages/FormKontak"));
+const ContactUsDetail = React.lazy(() => import("./pages/FormKontakDetail"));
 const Karyawan = React.lazy(() => import("./pages/Karyawan"));
+const KaryawanDetail = React.lazy(() => import("./pages/KaryawanDetail"));
 const AddKaryawan = React.lazy(() => import("./pages/KaryawanForm"));
 const MainLayout = React.lazy(() => import("./layouts/MainLayout"));
 const AuthLayout = React.lazy(() => import("./layouts/AuthLayout"));
@@ -35,7 +39,9 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/users" element={<Users />} />
           <Route path="/reservasi" element={<Reservasi />} />
+          <Route path="/reservasi/:id" element={<ReservasiDetail />} />
           <Route path="/produk" element={<Produk />} />
+          <Route path="/produk/:id" element={<ProdukDetail />} />
           <Route path="/produk/tambah" element={<AddProduct />} />
           <Route path="/produk/edit/:id" element={<EditProduct />} />
           <Route path="/faq" element={<FAQ />} />
@@ -44,7 +50,9 @@ function App() {
           <Route path="/profil/edit/:id" element={<ProfilEdit />} />
           <Route path="/testimoni" element={<Testimoni />} />
           <Route path="/contactUs" element={<ContactUs />} />
+          <Route path="/contactUs/:id" element={<ContactUsDetail />} />
           <Route path="/karyawan" element={<Karyawan />} />
+          <Route path="/karyawan/:id" element={<KaryawanDetail />} />
           <Route path="/karyawan/tambah" element={<AddKaryawan />} />
         </Route>
         <Route element={<AuthLayout />}>

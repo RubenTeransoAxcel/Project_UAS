@@ -6,6 +6,7 @@ import PageHeader2 from "../components/PageHeader";
 import initialData from "../assets/karyawan.json";
 import { useNavigate } from "react-router-dom";
 import Pagination from "../components/Pagination";
+import { Link } from "react-router-dom";
 
 const itemsPerPage = 10;
 
@@ -30,7 +31,10 @@ export default function CustomerPage() {
 
   return (
     <div id="dashboard-container">
-      <PageHeader2 title="Karyawan Barber" breadcrumb={["Dashboard", "Karyawan"]}>
+      <PageHeader2
+        title="Karyawan Barber"
+        breadcrumb={["Dashboard", "Karyawan"]}
+      >
         <button
           className="bg-hijau text-white px-4 py-2 rounded-lg flex items-center cursor-pointer"
           onClick={() => navigate("/karyawan/tambah")}
@@ -65,7 +69,14 @@ export default function CustomerPage() {
                     className="w-10 h-10 rounded-full object-cover"
                   />
                 </td>
-                <td className="px-4 py-2">{emp.Name}</td>
+                <td className="px-4 py-2">
+                  <Link
+                    to={`/karyawan/${emp["Karyawan ID"]}`}
+                    className="text-blue-600 hover:underline"
+                  >
+                    {emp.Name}
+                  </Link>
+                </td>
                 <td className="px-4 py-2">{emp.Email}</td>
                 <td className="px-4 py-2">{emp.Phone}</td>
                 <td className="px-4 py-2">{emp.Alamat}</td>

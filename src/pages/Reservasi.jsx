@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import data from "../assets/reservasi.json";
 import PageHeader from "../components/PageHeader";
-import Pagination from "../components/Pagination"; // ← import komponen pagination
+import Pagination from "../components/Pagination";
+import { Link } from "react-router-dom";
 
 const itemsPerPage = 10;
 
@@ -30,25 +31,48 @@ export default function ReservationTable() {
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-100">
             <tr>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">ID Reservasi</th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Nama Customer</th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Barber</th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Tanggal</th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Jam</th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Layanan</th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Total Harga</th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                ID Reservasi
+              </th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                Nama Customer
+              </th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                Barber
+              </th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                Tanggal
+              </th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                Jam
+              </th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                Layanan
+              </th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                Total Harga
+              </th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
             {currentItems.map((item, index) => (
               <tr key={index} className="hover:bg-gray-50">
                 <td className="px-4 py-2">{item["Reservasi ID"]}</td>
-                <td className="px-4 py-2">{item["Customer Name"]}</td>
+                <td className="px-4 py-2">
+                  <Link
+                    to={`/reservasi/${item["Reservasi ID"]}`}
+                    className="text-blue-600 hover:underline"
+                  >
+                    {item["Customer Name"]}
+                  </Link>
+                </td>
                 <td className="px-4 py-2">{item["Barber"]}</td>
                 <td className="px-4 py-2">{item["Tanggal"]}</td>
                 <td className="px-4 py-2">{item["Jam"]}</td>
                 <td className="px-4 py-2">{item["Jenis Layanan"]}</td>
-                <td className="px-4 py-2">Rp {item["Total Harga"].toLocaleString()}</td>
+                <td className="px-4 py-2">
+                  Rp {item["Total Harga"].toLocaleString()}
+                </td>
               </tr>
             ))}
           </tbody>

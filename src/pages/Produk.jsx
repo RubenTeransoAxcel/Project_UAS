@@ -50,12 +50,24 @@ export default function ProductTable() {
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-100">
             <tr>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Gambar</th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Nama</th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Harga</th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Stok</th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Kategori</th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Aksi</th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                Gambar
+              </th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                Nama
+              </th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                Harga
+              </th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                Stok
+              </th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                Kategori
+              </th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                Aksi
+              </th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
@@ -68,7 +80,14 @@ export default function ProductTable() {
                     className="w-16 h-16 object-cover rounded-md"
                   />
                 </td>
-                <td className="px-4 py-2">{item.name}</td>
+                <td className="px-4 py-2">
+                  <Link
+                    to={`/produk/${item.id}`}
+                    className="text-emerald-600 hover:underline"
+                  >
+                    {item.name}
+                  </Link>
+                </td>
                 <td className="px-4 py-2">Rp {item.price.toLocaleString()}</td>
                 <td className="px-4 py-2">{item.stock}</td>
                 <td className="px-4 py-2">{item.category}</td>
