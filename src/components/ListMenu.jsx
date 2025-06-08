@@ -1,3 +1,7 @@
+import { MdPriceChange } from "react-icons/md"; 
+import { MdPermMedia } from "react-icons/md"; 
+import { FaHireAHelper } from "react-icons/fa"; 
+import { MdArticle } from "react-icons/md"; 
 import { MdCorporateFare } from "react-icons/md"; 
 import { FaUser } from "react-icons/fa"; 
 import { SiGooglemessages } from "react-icons/si"; 
@@ -40,9 +44,27 @@ export default function ListMenu() {
           </NavLink>
         </li>
         <li>
+          <NavLink to="/artikel" className={menuClass}>
+            <MdArticle className="mr-4 text-xl"/>
+            Artikel
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/galeri" className={menuClass}>
+            <MdPermMedia className="mr-4 text-xl"/>
+            Media Gallery
+          </NavLink>
+        </li>
+        <li>
           <NavLink to="/produk" className={menuClass}>
             <FaBox className="mr-4 text-xl" />
             Produk
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/layanan" className={menuClass}>
+            <MdPriceChange className="mr-4 text-2xl" />
+            Layanan
           </NavLink>
         </li>
         <li>
@@ -79,6 +101,12 @@ export default function ListMenu() {
           <NavLink to="/profil" className={menuClass}>
             <MdCorporateFare className="mr-4 text-xl"/>
             Profil Perusahaan
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/lowongan" className={menuClass}>
+            <FaHireAHelper className="mr-4 text-xl"/>
+            Lowongan Pekerjaan
           </NavLink>
         </li>
       </ul>
