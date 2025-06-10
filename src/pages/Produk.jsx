@@ -62,12 +62,12 @@ export default function ProductTable() {
                   />
                 </td>
                 <td className="px-4 py-2">
-                  <Link
+                  <b><Link
                     to={`/produk/${item.id}`}
-                    className="text-emerald-600 hover:underline"
+                    className="text-coklat hover:underline"
                   >
                     {item.name}
-                  </Link>
+                  </Link></b>
                 </td>
                 <td className="px-4 py-2 text-gray-800">
                   Rp {item.price.toLocaleString()}
@@ -83,7 +83,7 @@ export default function ProductTable() {
                   </Link>
                   <button
                     onClick={() => handleDelete(item.id)}
-                    className="bg-red-500 hover:bg-red-600 text-white text-sm px-3 py-1 rounded"
+                    className="bg-red-500 hover:bg-red-600 text-white text-sm px-3 py-1 rounded cursor-pointer"
                   >
                     Hapus
                   </button>

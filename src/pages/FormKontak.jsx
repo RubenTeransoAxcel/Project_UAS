@@ -4,59 +4,29 @@ import data from "../assets/contactUs.json";
 import Pagination from "../components/Pagination";
 import { Link } from "react-router-dom";
 
-const itemsPerPage = 10;
-
 export default function FormKontakTable() {
   const [formKontak, setFormKontak] = useState(data);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchDate, setSearchDate] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-
-  // Untuk fitur jawab
+  const [itemsPerPage, setItemsPerPage] = useState(10);
   const [editingId, setEditingId] = useState(null);
   const [answerText, setAnswerText] = useState("");
 
-  // Filter berdasarkan nama/email dan tanggal
   const filteredData = formKontak.filter((item) => {
     const nama = item.user.nama.toLowerCase();
     const email = item.user.email.toLowerCase();
     const tanggal = item.tanggal;
     const term = searchTerm.toLowerCase();
-
     const matchesText = nama.includes(term) || email.includes(term);
     const matchesDate = searchDate === "" || tanggal === searchDate;
-
     return matchesText && matchesDate;
   });
 
-  // Pagination data
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentItems = filteredData.slice(
-    startIndex,
-    startIndex + itemsPerPage
-  );
+  const currentItems = filteredData.slice(startIndex, startIndex + itemsPerPage);
 
-  // Pagination handlers
-  const handleNext = () => {
-    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
-  };
-
-  const handlePrev = () => {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
-  };
-
-  const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
-    setCurrentPage(1); // Reset page ketika filter berubah
-  };
-
-  const handleRatingChange = (e) => {
-    setRatingFilter(e.target.value);
-    setCurrentPage(1); // Reset page ketika filter berubah
-  };
-
-  // Handler simpan jawaban admin
   const handleAnswerSubmit = (id) => {
     const updatedData = formKontak.map((item) =>
       item.id === id ? { ...item, jawabanAdmin: answerText } : item
@@ -66,29 +36,20 @@ export default function FormKontakTable() {
     setAnswerText("");
   };
 
-  const nextPage = () => {
-    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
-  };
-
-  const prevPage = () => {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
-  };
-
   return (
     <div className="flex flex-col w-full">
-      <PageHeader
-        title="Form Kontak"
-        breadcrumb={["Dashboard", "Form Kontak"]}
-      />
+      <PageHeader title="Form Kontak" breadcrumb={["Dashboard", "Form Kontak"]} />
 
       <div className="p-6 bg-white rounded-xl shadow-md">
-        <h2 className="text-2xl font-bold mb-4">Daftar Form Kontak</h2>
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-2xl font-bold">Daftar Form Kontak</h2>
+        </div>
 
         {/* Filter */}
         <div className="flex flex-wrap gap-4 mb-4">
           <input
             type="text"
-            placeholder="Cari berdasarkan nama atau email..."
+            placeholder="Cari nama/email..."
             value={searchTerm}
             onChange={(e) => {
               setSearchTerm(e.target.value);
@@ -107,37 +68,28 @@ export default function FormKontakTable() {
           />
         </div>
 
-        {/* Table */}
+        {/* Tabel */}
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-100">
+          <table className="w-full text-sm text-left">
+            <thead className="bg-white border-b border-gray-200 text-gray-600 font-medium">
               <tr>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                  Avatar
-                </th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                  Nama
-                </th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                  Email
-                </th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                  Tujuan
-                </th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                  Pesan
-                </th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                  Tanggal
-                </th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                  Jawaban Admin
-                </th>
+                <th className="px-4 py-3">Avatar</th>
+                <th className="px-4 py-3">Nama</th>
+                <th className="px-4 py-3">Email</th>
+                <th className="px-4 py-3">Tujuan</th>
+                <th className="px-4 py-3">Pesan</th>
+                <th className="px-4 py-3">Tanggal</th>
+                <th className="px-4 py-3">Jawaban Admin</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
-              {currentItems.map((item) => (
-                <tr key={item.id} className="hover:bg-gray-50 align-top">
+            <tbody>
+              {currentItems.map((item, index) => (
+                <tr
+                  key={item.id}
+                  className={`transition ${
+                    index % 2 === 0 ? "bg-white" : "bg-gray-50"
+                  } hover:bg-gray-100 align-top`}
+                >
                   <td className="px-4 py-2">
                     <img
                       src={item.user.avatar}
@@ -146,24 +98,17 @@ export default function FormKontakTable() {
                     />
                   </td>
                   <td className="px-4 py-2 font-medium text-gray-800">
-                    <Link
-                      to={`/contactUs/${item.id}`}
-                      className="text-blue-600 hover:underline"
-                    >
+                    <b><Link to={`/contactUs/${item.id}`} className="text-coklat hover:underline hover:text-coklat2">
                       {item.user.nama}
-                    </Link>
+                    </Link></b>
                   </td>
                   <td className="px-4 py-2 text-gray-600">{item.user.email}</td>
-                  <td className="px-4 py-2 text-gray-600">
-                    {item.kontak.tujuan}
-                  </td>
-                  <td className="px-4 py-2 text-gray-600 max-w-xs break-words">
-                    {item.kontak.pesan}
-                  </td>
+                  <td className="px-4 py-2 text-gray-600">{item.kontak.tujuan}</td>
+                  <td className="px-4 py-2 text-gray-600 max-w-xs break-words">{item.kontak.pesan}</td>
                   <td className="px-4 py-2 text-gray-600">{item.tanggal}</td>
                   <td className="px-4 py-2">
                     {editingId === item.id ? (
-                      <div className="flex flex-col">
+                      <div className="flex flex-col gap-1">
                         <textarea
                           className="border p-1 rounded text-sm"
                           value={answerText}
@@ -172,7 +117,7 @@ export default function FormKontakTable() {
                         />
                         <button
                           onClick={() => handleAnswerSubmit(item.id)}
-                          className="mt-1 bg-blue-600 text-white px-2 py-1 rounded text-xs hover:bg-blue-700"
+                          className="bg-blue-600 text-white px-3 py-1 text-xs rounded hover:bg-blue-700"
                         >
                           Simpan
                         </button>
@@ -185,7 +130,7 @@ export default function FormKontakTable() {
                           setEditingId(item.id);
                           setAnswerText(item.jawabanAdmin || "");
                         }}
-                        className="bg-blue-500 text-white px-3 py-1 text-xs rounded hover:bg-blue-600 cursor-pointer"
+                        className="bg-blue-500 text-white px-3 py-1 text-xs rounded hover:bg-blue-600"
                       >
                         Jawab
                       </button>
@@ -196,7 +141,7 @@ export default function FormKontakTable() {
               {currentItems.length === 0 && (
                 <tr>
                   <td colSpan="7" className="text-center text-gray-500 py-4">
-                    Tidak ada data form kontak ditemukan.
+                    Tidak ada data ditemukan.
                   </td>
                 </tr>
               )}
@@ -208,8 +153,9 @@ export default function FormKontakTable() {
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
-          onPrev={prevPage}
-          onNext={nextPage}
+          onPageChange={setCurrentPage}
+          itemsPerPage={itemsPerPage}
+          onPageSizeChange={setItemsPerPage}
         />
       </div>
     </div>

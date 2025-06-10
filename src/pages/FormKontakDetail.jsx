@@ -13,7 +13,10 @@ export default function FormKontakDetail() {
     return (
       <div className="p-6">
         <p className="text-red-600">Data kontak tidak ditemukan.</p>
-        <button onClick={() => navigate(-1)} className="mt-4 text-blue-500 underline">
+        <button
+          onClick={() => navigate(-1)}
+          className="mt-4 text-blue-500 underline cursor-pointer"
+        >
           Kembali
         </button>
       </div>
@@ -21,36 +24,49 @@ export default function FormKontakDetail() {
   }
 
   return (
-    <div className="p-6 max-w-3xl mx-auto bg-white rounded-xl shadow">
+    <div className="p-6 max-w-5xl mx-auto space-y-4">
+      {/* Tombol kembali */}
       <button
         onClick={() => navigate(-1)}
-        className="mb-4 flex items-center text-gray-600 hover:text-gray-800 cursor-pointer"
+        className="flex items-center text-gray-600 hover:text-gray-800 cursor-pointer"
       >
-        <MdArrowBack className="mr-2" /> Kembali
+        <MdArrowBack className="mr-2 text-lg" /> Kembali
       </button>
 
-      <div className="flex items-center gap-4 mb-6">
-        <img
-          src={kontak.user.avatar}
-          alt={kontak.user.nama}
-          className="w-20 h-20 rounded-full object-cover"
-        />
-        <div>
-          <h2 className="text-xl font-bold">{kontak.user.nama}</h2>
-          <p className="text-gray-500">{kontak.user.email}</p>
+      {/* Card layout */}
+      <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+        {/* Avatar */}
+        <div className="md:w-1/3 w-full flex justify-center items-center bg-gray-50 p-4">
+          <img
+            src={kontak.user.avatar}
+            alt={kontak.user.nama}
+            className="w-32 h-32 rounded-full object-cover border"
+          />
         </div>
-      </div>
 
-      <div className="text-gray-700 space-y-3 text-sm">
-        <p><b>ID:</b> {kontak.id}</p>
-        <p><b>Tujuan:</b> {kontak.kontak.tujuan}</p>
-        <p><b>Pesan:</b> {kontak.kontak.pesan}</p>
-        <p><b>Tanggal:</b> {kontak.tanggal}</p>
-        {kontak.jawabanAdmin && (
-          <p className="bg-blue-50 border border-blue-200 p-3 rounded-md">
-            <b>Jawaban Admin:</b><br />{kontak.jawabanAdmin}
-          </p>
-        )}
+        {/* Detail Kontak */}
+        <div className="p-6 md:w-2/3 flex flex-col justify-between space-y-4 text-sm text-gray-700">
+          <div>
+            <h2 className="text-2xl font-bold mb-2 text-gray-800">
+              {kontak.user.nama}
+            </h2>
+            <p className="text-gray-500 mb-4">{kontak.user.email}</p>
+
+            <ul className="space-y-1">
+              <li><b>ID:</b> {kontak.id}</li>
+              <li><b>Tujuan:</b> {kontak.kontak.tujuan}</li>
+              <li><b>Pesan:</b> {kontak.kontak.pesan}</li>
+              <li><b>Tanggal:</b> {kontak.tanggal}</li>
+            </ul>
+
+            {kontak.jawabanAdmin && (
+              <div className="mt-4 bg-blue-50 border border-blue-200 p-3 rounded-md">
+                <b>Jawaban Admin:</b>
+                <p className="mt-1">{kontak.jawabanAdmin}</p>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

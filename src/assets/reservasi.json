@@ -1,273 +1,52 @@
 [
-    {
-      "Reservasi ID": "R001",
-      "Customer Name": "Andi Wijaya",
-      "Barber": "Joko Barber",
-      "Tanggal": "2025-04-20",
-      "Jam": "10:00",
-      "Jenis Layanan": "Haircut + Cuci",
-      "Total Harga": 55000
-    },
-    {
-      "Reservasi ID": "R002",
-      "Customer Name": "Citra Lestari",
-      "Barber": "Rian Barber",
-      "Tanggal": "2025-04-20",
-      "Jam": "11:00",
-      "Jenis Layanan": "Haircut + Beard Trim",
-      "Total Harga": 75000
-    },
-    {
-      "Reservasi ID": "R003",
-      "Customer Name": "Budi Santoso",
-      "Barber": "Asep Gunawan",
-      "Tanggal": "2025-04-21",
-      "Jam": "09:30",
-      "Jenis Layanan": "Haircut",
-      "Total Harga": 40000
-    },
-    {
-      "Reservasi ID": "R004",
-      "Customer Name": "Eka Putri",
-      "Barber": "Joko Barber",
-      "Tanggal": "2025-04-21",
-      "Jam": "13:00",
-      "Jenis Layanan": "Hair Spa",
-      "Total Harga": 85000
-    },
-    {
-      "Reservasi ID": "R005",
-      "Customer Name": "Fajar Nugroho",
-      "Barber": "Rian Barber",
-      "Tanggal": "2025-04-22",
-      "Jam": "15:30",
-      "Jenis Layanan": "Haircut + Hair Spa",
-      "Total Harga": 105000
-    },
-    {
-      "Reservasi ID": "R006",
-      "Customer Name": "Gita Sari",
-      "Barber": "Asep Gunawan",
-      "Tanggal": "2025-04-22",
-      "Jam": "16:00",
-      "Jenis Layanan": "Cuci Rambut",
-      "Total Harga": 25000
-    },
-    {
-      "Reservasi ID": "R007",
-      "Customer Name": "Hariyanto",
-      "Barber": "Joko Barber",
-      "Tanggal": "2025-04-23",
-      "Jam": "10:00",
-      "Jenis Layanan": "Haircut + Facial",
-      "Total Harga": 90000
-    },
-    {
-      "Reservasi ID": "R008",
-      "Customer Name": "Indah Ramadhani",
-      "Barber": "Rian Barber",
-      "Tanggal": "2025-04-23",
-      "Jam": "12:30",
-      "Jenis Layanan": "Hair Color",
-      "Total Harga": 120000
-    },
-    {
-      "Reservasi ID": "R009",
-      "Customer Name": "Joko Susilo",
-      "Barber": "Asep Gunawan",
-      "Tanggal": "2025-04-24",
-      "Jam": "14:00",
-      "Jenis Layanan": "Beard Trim",
-      "Total Harga": 30000
-    },
-    {
-      "Reservasi ID": "R010",
-      "Customer Name": "Lutfi Hakim",
-      "Barber": "Joko Barber",
-      "Tanggal": "2025-04-24",
-      "Jam": "16:30",
-      "Jenis Layanan": "Haircut + Massage",
-      "Total Harga": 95000
-    },
-    {
-      "Reservasi ID": "R011",
-      "Customer Name": "Maria Ulfa",
-      "Barber": "Rian Barber",
-      "Tanggal": "2025-04-25",
-      "Jam": "09:00",
-      "Jenis Layanan": "Haircut",
-      "Total Harga": 40000
-    },
-    {
-      "Reservasi ID": "R012",
-      "Customer Name": "Nanda Putra",
-      "Barber": "Asep Gunawan",
-      "Tanggal": "2025-04-25",
-      "Jam": "11:00",
-      "Jenis Layanan": "Haircut + Cuci",
-      "Total Harga": 55000
-    },
-    {
-      "Reservasi ID": "R013",
-      "Customer Name": "Olivia Hadi",
-      "Barber": "Joko Barber",
-      "Tanggal": "2025-04-26",
-      "Jam": "13:00",
-      "Jenis Layanan": "Facial",
-      "Total Harga": 60000
-    },
-    {
-      "Reservasi ID": "R014",
-      "Customer Name": "Pandu Riyadi",
-      "Barber": "Rian Barber",
-      "Tanggal": "2025-04-26",
-      "Jam": "15:00",
-      "Jenis Layanan": "Haircut + Cuci",
-      "Total Harga": 55000
-    },
-    {
-      "Reservasi ID": "R015",
-      "Customer Name": "Qory Maulana",
-      "Barber": "Asep Gunawan",
-      "Tanggal": "2025-04-27",
-      "Jam": "10:00",
-      "Jenis Layanan": "Haircut",
-      "Total Harga": 40000
-    },
-    {
-      "Reservasi ID": "R016",
-      "Customer Name": "Rina Oktaviani",
-      "Barber": "Joko Barber",
-      "Tanggal": "2025-04-27",
-      "Jam": "11:30",
-      "Jenis Layanan": "Haircut + Hair Spa",
-      "Total Harga": 105000
-    },
-    {
-      "Reservasi ID": "R017",
-      "Customer Name": "Sandi Wirawan",
-      "Barber": "Rian Barber",
-      "Tanggal": "2025-04-28",
-      "Jam": "09:30",
-      "Jenis Layanan": "Haircut + Facial",
-      "Total Harga": 90000
-    },
-    {
-      "Reservasi ID": "R018",
-      "Customer Name": "Tari Andini",
-      "Barber": "Asep Gunawan",
-      "Tanggal": "2025-04-28",
-      "Jam": "14:00",
-      "Jenis Layanan": "Hair Spa",
-      "Total Harga": 85000
-    },
-    {
-      "Reservasi ID": "R019",
-      "Customer Name": "Umar Syahputra",
-      "Barber": "Joko Barber",
-      "Tanggal": "2025-04-29",
-      "Jam": "10:00",
-      "Jenis Layanan": "Haircut + Cuci",
-      "Total Harga": 55000
-    },
-    {
-      "Reservasi ID": "R020",
-      "Customer Name": "Vina Melati",
-      "Barber": "Rian Barber",
-      "Tanggal": "2025-04-29",
-      "Jam": "12:00",
-      "Jenis Layanan": "Haircut + Massage",
-      "Total Harga": 95000
-    },
-    {
-      "Reservasi ID": "R021",
-      "Customer Name": "Wawan Hermawan",
-      "Barber": "Asep Gunawan",
-      "Tanggal": "2025-04-30",
-      "Jam": "09:00",
-      "Jenis Layanan": "Haircut",
-      "Total Harga": 40000
-    },
-    {
-      "Reservasi ID": "R022",
-      "Customer Name": "Xena Rahma",
-      "Barber": "Joko Barber",
-      "Tanggal": "2025-04-30",
-      "Jam": "11:00",
-      "Jenis Layanan": "Cuci Rambut",
-      "Total Harga": 25000
-    },
-    {
-      "Reservasi ID": "R023",
-      "Customer Name": "Yuda Prasetyo",
-      "Barber": "Rian Barber",
-      "Tanggal": "2025-05-01",
-      "Jam": "10:30",
-      "Jenis Layanan": "Haircut + Cuci",
-      "Total Harga": 55000
-    },
-    {
-      "Reservasi ID": "R024",
-      "Customer Name": "Zahra Kamila",
-      "Barber": "Asep Gunawan",
-      "Tanggal": "2025-05-01",
-      "Jam": "13:00",
-      "Jenis Layanan": "Hair Color",
-      "Total Harga": 120000
-    },
-    {
-      "Reservasi ID": "R025",
-      "Customer Name": "Rafi Gunawan",
-      "Barber": "Joko Barber",
-      "Tanggal": "2025-05-02",
-      "Jam": "15:00",
-      "Jenis Layanan": "Haircut + Cuci",
-      "Total Harga": 55000
-    },
-    {
-      "Reservasi ID": "R026",
-      "Customer Name": "Mega Ayu",
-      "Barber": "Rian Barber",
-      "Tanggal": "2025-05-02",
-      "Jam": "16:00",
-      "Jenis Layanan": "Hair Spa",
-      "Total Harga": 85000
-    },
-    {
-      "Reservasi ID": "R027",
-      "Customer Name": "Dimas Aditya",
-      "Barber": "Asep Gunawan",
-      "Tanggal": "2025-05-03",
-      "Jam": "10:00",
-      "Jenis Layanan": "Haircut + Beard Trim",
-      "Total Harga": 75000
-    },
-    {
-      "Reservasi ID": "R028",
-      "Customer Name": "Salsa Maulida",
-      "Barber": "Joko Barber",
-      "Tanggal": "2025-05-03",
-      "Jam": "11:30",
-      "Jenis Layanan": "Facial",
-      "Total Harga": 60000
-    },
-    {
-      "Reservasi ID": "R029",
-      "Customer Name": "Kevin Sanjaya",
-      "Barber": "Rian Barber",
-      "Tanggal": "2025-05-04",
-      "Jam": "13:00",
-      "Jenis Layanan": "Haircut",
-      "Total Harga": 40000
-    },
-    {
-      "Reservasi ID": "R030",
-      "Customer Name": "Linda Aprilia",
-      "Barber": "Asep Gunawan",
-      "Tanggal": "2025-05-04",
-      "Jam": "15:00",
-      "Jenis Layanan": "Haircut + Facial",
-      "Total Harga": 90000
-    }
-  ]
-  
+  {
+    "Reservasi ID": "R001",
+    "Customer Name": "Andi Wijaya",
+    "Foto": "https://i.pravatar.cc/150?img=1",
+    "Barber": "Joko Barber",
+    "Tanggal": "2025-04-20",
+    "Jam": "10:00",
+    "Jenis Layanan": "Haircut + Cuci",
+    "Total Harga": 55000
+  },
+  {
+    "Reservasi ID": "R002",
+    "Customer Name": "Citra Lestari",
+    "Foto": "https://i.pravatar.cc/150?img=2",
+    "Barber": "Rian Barber",
+    "Tanggal": "2025-04-20",
+    "Jam": "11:00",
+    "Jenis Layanan": "Haircut + Beard Trim",
+    "Total Harga": 75000
+  },
+  {
+    "Reservasi ID": "R003",
+    "Customer Name": "Budi Santoso",
+    "Foto": "https://i.pravatar.cc/150?img=3",
+    "Barber": "Asep Gunawan",
+    "Tanggal": "2025-04-21",
+    "Jam": "09:30",
+    "Jenis Layanan": "Haircut",
+    "Total Harga": 40000
+  },
+  {
+    "Reservasi ID": "R004",
+    "Customer Name": "Eka Putri",
+    "Foto": "https://i.pravatar.cc/150?img=4",
+    "Barber": "Joko Barber",
+    "Tanggal": "2025-04-21",
+    "Jam": "13:00",
+    "Jenis Layanan": "Hair Spa",
+    "Total Harga": 85000
+  },
+  {
+    "Reservasi ID": "R005",
+    "Customer Name": "Fajar Nugroho",
+    "Foto": "https://i.pravatar.cc/150?img=5",
+    "Barber": "Rian Barber",
+    "Tanggal": "2025-04-22",
+    "Jam": "15:30",
+    "Jenis Layanan": "Haircut + Hair Spa",
+    "Total Harga": 105000
+  }
+]

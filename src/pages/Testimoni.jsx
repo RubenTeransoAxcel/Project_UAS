@@ -2,51 +2,34 @@ import React, { useState } from "react";
 import data from "../assets/testimoni.json";
 import PageHeader from "../components/PageHeader";
 import Pagination from "../components/Pagination";
-
-const itemsPerPage = 10;
+import { Link } from "react-router-dom";
 
 export default function TestimoniTable() {
   const [searchTerm, setSearchTerm] = useState("");
   const [ratingFilter, setRatingFilter] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
 
   // Filter berdasarkan nama & rating
   const filteredData = data.filter((item) => {
-    const matchesName = item.name.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesRating = ratingFilter === "" || item.rating === parseInt(ratingFilter);
+    const matchesName = item.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    const matchesRating =
+      ratingFilter === "" || item.rating === parseInt(ratingFilter);
     return matchesName && matchesRating;
   });
 
-  // Pagination data
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentItems = filteredData.slice(startIndex, startIndex + itemsPerPage);
-
-  // Pagination handlers
-  const handleNext = () => {
-    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
-  };
-
-  const handlePrev = () => {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
-  };
-
-  const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
-    setCurrentPage(1); // Reset page ketika filter berubah
-  };
-
-  const handleRatingChange = (e) => {
-    setRatingFilter(e.target.value);
-    setCurrentPage(1); // Reset page ketika filter berubah
-  };
 
   return (
     <div className="flex flex-col w-full">
       <PageHeader title="Testimoni" breadcrumb={["Dashboard", "Testimoni"]} />
 
-      <div className="p-6 bg-white rounded-xl shadow-md">
-        <h2 className="text-2xl font-bold mb-4">Daftar Testimoni</h2>
+      <div className="p-6 bg-white rounded-xl shadow-md overflow-hidden">
+        <h2 className="text-xl font-bold mb-4">Daftar Testimoni</h2>
 
         {/* Filter */}
         <div className="flex flex-wrap items-center gap-4 mb-4">
@@ -54,12 +37,18 @@ export default function TestimoniTable() {
             type="text"
             placeholder="Cari nama..."
             value={searchTerm}
-            onChange={handleSearchChange}
+            onChange={(e) => {
+              setSearchTerm(e.target.value);
+              setCurrentPage(1);
+            }}
             className="px-4 py-2 border border-gray-300 rounded-md w-full sm:w-1/2"
           />
           <select
             value={ratingFilter}
-            onChange={handleRatingChange}
+            onChange={(e) => {
+              setRatingFilter(e.target.value);
+              setCurrentPage(1);
+            }}
             className="px-4 py-2 border border-gray-300 rounded-md w-full sm:w-1/4"
           >
             <option value="">Semua Rating</option>
@@ -73,23 +62,39 @@ export default function TestimoniTable() {
 
         {/* Tabel */}
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-100">
+          <table className="w-full text-sm text-left">
+            <thead className="bg-white border-b border-gray-200 text-gray-600 font-medium">
               <tr>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Avatar</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Nama</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Review</th>
-                <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Rating</th>
+                <th className="px-4 py-3">Avatar</th>
+                <th className="px-4 py-3">Nama</th>
+                <th className="px-4 py-3">Review</th>
+                <th className="px-4 py-3">Rating</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
-              {currentItems.map((item) => (
-                <tr key={item.id} className="hover:bg-gray-50">
+            <tbody>
+              {currentItems.map((item, index) => (
+                <tr
+                  key={item.id}
+                  className={`transition ${index % 2 === 0 ? "bg-white" : "bg-gray-50"} hover:bg-gray-100`}
+                >
                   <td className="px-4 py-2">
-                    <img src={item.avatar} alt={item.name} className="w-10 h-10 rounded-full" />
+                    <Link to={`/testimoni/${item.id}`}>
+                      <img
+                        src={item.avatar}
+                        alt={item.name}
+                        className="w-10 h-10 rounded-full"
+                      />
+                    </Link>
                   </td>
-                  <td className="px-4 py-2 font-medium text-gray-800">{item.name}</td>
-                  <td className="px-4 py-2 text-gray-600">{item.review}</td>
+                  <td className="px-4 py-2 font-medium text-gray-800">
+                    <Link
+                      to={`/testimoni/${item.id}`}
+                      className="text-coklat hover:underline hover:text-coklat2"
+                    >
+                      {item.name}
+                    </Link>
+                  </td>
+                  <td className="px-4 py-2 text-gray-700">{item.review}</td>
                   <td className="px-4 py-2 text-yellow-500">
                     {"⭐".repeat(item.rating)}
                     {"☆".repeat(5 - item.rating)}
@@ -107,12 +112,13 @@ export default function TestimoniTable() {
           </table>
         </div>
 
-        {/* Pagination */}
+        {/* Pagination modern */}
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
-          onPrev={handlePrev}
-          onNext={handleNext}
+          onPageChange={setCurrentPage}
+          itemsPerPage={itemsPerPage}
+          onPageSizeChange={setItemsPerPage}
         />
       </div>
     </div>

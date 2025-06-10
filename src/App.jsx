@@ -15,10 +15,12 @@ const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const Artikel = React.lazy(() => import("./pages/Artikel"));
 const ErrorPage = React.lazy(() => import("./pages/ErrorPage"));
 const FAQ = React.lazy(() => import("./pages/FAQ"));
-const Testimoni = React.lazy(() => import("./pages/Testimoni"));
 const LowonganPekerjaan = React.lazy(() => import("./pages/LowonganPekerjaan"));
 const MediaGaleri = React.lazy(() => import("./pages/MediaGallery"));
 const Layanan = React.lazy(() => import("./pages/Layanan"));
+      //testimoni
+const Testimoni = React.lazy(() => import("./pages/Testimoni"));
+const TestimoniDetail = React.lazy(() => import("./pages/TestimoniDetail"));
       //users
 const Users = React.lazy(() => import("./pages/User"));
 const UsersDetail = React.lazy(() => import("./pages/UsersDetail"));
@@ -58,10 +60,12 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/Artikel" element={<Artikel />} />
           <Route path="/faq" element={<FAQ />} />
-          <Route path="/testimoni" element={<Testimoni />} />
           <Route path="/lowongan" element={<LowonganPekerjaan />} />
           <Route path="/galeri" element={<MediaGaleri />} />
           <Route path="/layanan" element={<Layanan />} />
+            {/* {testimoni} */}
+          <Route path="/testimoni" element={<Testimoni />} />
+          <Route path="/testimoni/:id" element={<TestimoniDetail />} />
             {/* {users} */}
           <Route path="/users" element={<Users />} />
           <Route path="/users/:id" element={<UsersDetail />} />

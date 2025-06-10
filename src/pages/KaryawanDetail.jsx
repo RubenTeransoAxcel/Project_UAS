@@ -1,3 +1,4 @@
+// src/pages/KaryawanDetail.jsx
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import data from "../assets/karyawan.json";
@@ -12,8 +13,11 @@ export default function KaryawanDetail() {
   if (!employee) {
     return (
       <div className="p-6">
-        <p className="text-red-500">Karyawan tidak ditemukan.</p>
-        <button onClick={() => navigate(-1)} className="mt-4 text-blue-500 underline">
+        <p className="text-red-600">Karyawan tidak ditemukan.</p>
+        <button
+          onClick={() => navigate(-1)}
+          className="mt-4 text-blue-500 underline cursor-pointer"
+        >
           Kembali
         </button>
       </div>
@@ -21,32 +25,43 @@ export default function KaryawanDetail() {
   }
 
   return (
-    <div className="p-6 max-w-2xl mx-auto bg-white rounded-xl shadow">
+    <div className="p-6 max-w-5xl mx-auto space-y-4">
+      {/* Tombol kembali */}
       <button
         onClick={() => navigate(-1)}
-        className="mb-4 flex items-center text-gray-600 hover:text-gray-800 cursor-pointer"
+        className="flex items-center text-gray-600 hover:text-gray-800 cursor-pointer"
       >
-        <MdArrowBack className="mr-2" /> Kembali
+        <MdArrowBack className="mr-2 text-lg" /> Kembali
       </button>
 
-      <div className="flex gap-4 items-center mb-6">
-        <img
-          src={employee.Foto}
-          alt={employee.Name}
-          className="w-24 h-24 rounded-full object-cover"
-        />
-        <div>
-          <h2 className="text-2xl font-bold">{employee.Name}</h2>
-          <p className="text-gray-500">{employee.Jabatan}</p>
+      {/* Card layout */}
+      <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+        {/* Foto profil */}
+        <div className="md:w-1/3 w-full flex justify-center items-center bg-gray-50 p-4">
+          <img
+            src={employee.Foto}
+            alt={employee.Name}
+            className="w-32 h-32 rounded-full object-cover border"
+          />
         </div>
-      </div>
 
-      <div className="text-gray-700 space-y-2 text-sm">
-        <p><b>Karyawan ID:</b> {employee["Karyawan ID"]}</p>
-        <p><b>Email:</b> {employee.Email}</p>
-        <p><b>Phone:</b> {employee.Phone}</p>
-        <p><b>Alamat:</b> {employee.Alamat}</p>
-        <p><b>Tanggal Masuk:</b> {employee["Tanggal Masuk"]}</p>
+        {/* Detail karyawan */}
+        <div className="p-6 md:w-2/3 flex flex-col justify-between space-y-4 text-sm text-gray-700">
+          <div>
+            <h2 className="text-2xl font-bold mb-2 text-gray-800">
+              {employee.Name}
+            </h2>
+            <p className="text-gray-500 mb-4">{employee.Jabatan}</p>
+
+            <ul className="space-y-1">
+              <li><b>Karyawan ID:</b> {employee["Karyawan ID"]}</li>
+              <li><b>Email:</b> {employee.Email}</li>
+              <li><b>Phone:</b> {employee.Phone}</li>
+              <li><b>Alamat:</b> {employee.Alamat}</li>
+              <li><b>Tanggal Masuk:</b> {employee["Tanggal Masuk"]}</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
