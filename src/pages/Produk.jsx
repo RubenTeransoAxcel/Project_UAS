@@ -1,34 +1,24 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
-import Pagination from "../components/Pagination"; // ✅ Tambah ini
+import Pagination from "../components/Pagination";
 import data from "../assets/produk.json";
-
-const itemsPerPage = 10;
 
 export default function ProductTable() {
   const [products, setProducts] = useState(data);
   const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
   const navigate = useNavigate();
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentItems = products.slice(startIndex, startIndex + itemsPerPage);
   const totalPages = Math.ceil(products.length / itemsPerPage);
 
-  const nextPage = () => {
-    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
-  };
-
-  const prevPage = () => {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
-  };
-
   const handleDelete = (id) => {
     const confirmDelete = window.confirm("Yakin ingin menghapus produk ini?");
     if (confirmDelete) {
       const updatedProducts = products.filter((item) => item.id !== id);
       setProducts(updatedProducts);
-      console.log("Data setelah hapus:", updatedProducts);
     }
   };
 
@@ -47,37 +37,28 @@ export default function ProductTable() {
           </Link>
         </div>
 
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-100">
+        <table className="w-full text-sm text-left">
+          <thead className="bg-white border-b border-gray-200 text-gray-600 font-medium">
             <tr>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                Gambar
-              </th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                Nama
-              </th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                Harga
-              </th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                Stok
-              </th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                Kategori
-              </th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                Aksi
-              </th>
+              <th className="px-4 py-3">Gambar</th>
+              <th className="px-4 py-3">Nama</th>
+              <th className="px-4 py-3">Harga</th>
+              <th className="px-4 py-3">Stok</th>
+              <th className="px-4 py-3">Kategori</th>
+              <th className="px-4 py-3">Aksi</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-100">
-            {currentItems.map((item) => (
-              <tr key={item.id} className="hover:bg-gray-50">
+          <tbody>
+            {currentItems.map((item, index) => (
+              <tr
+                key={item.id}
+                className={`transition ${index % 2 === 0 ? "bg-white" : "bg-gray-50"} hover:bg-gray-100`}
+              >
                 <td className="px-4 py-2">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-16 h-16 object-cover rounded-md"
+                    className="w-16 h-16 object-cover rounded-md border border-gray-200"
                   />
                 </td>
                 <td className="px-4 py-2">
@@ -88,9 +69,11 @@ export default function ProductTable() {
                     {item.name}
                   </Link>
                 </td>
-                <td className="px-4 py-2">Rp {item.price.toLocaleString()}</td>
-                <td className="px-4 py-2">{item.stock}</td>
-                <td className="px-4 py-2">{item.category}</td>
+                <td className="px-4 py-2 text-gray-800">
+                  Rp {item.price.toLocaleString()}
+                </td>
+                <td className="px-4 py-2 text-gray-800">{item.stock}</td>
+                <td className="px-4 py-2 text-gray-800">{item.category}</td>
                 <td className="px-4 py-2 space-x-2">
                   <Link
                     to={`/produk/edit/${item.id}`}
@@ -110,12 +93,12 @@ export default function ProductTable() {
           </tbody>
         </table>
 
-        {/* ✅ Ganti Pagination Manual dengan Komponen */}
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
-          onPrev={prevPage}
-          onNext={nextPage}
+          onPageChange={setCurrentPage}
+          itemsPerPage={itemsPerPage}
+          onPageSizeChange={setItemsPerPage}
         />
       </div>
     </div>

@@ -12,7 +12,6 @@ const Loading = React.lazy(() => import("./components/Loading"));
 
 //pages
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));
-const Users = React.lazy(() => import("./pages/User"));
 const Artikel = React.lazy(() => import("./pages/Artikel"));
 const ErrorPage = React.lazy(() => import("./pages/ErrorPage"));
 const FAQ = React.lazy(() => import("./pages/FAQ"));
@@ -20,6 +19,9 @@ const Testimoni = React.lazy(() => import("./pages/Testimoni"));
 const LowonganPekerjaan = React.lazy(() => import("./pages/LowonganPekerjaan"));
 const MediaGaleri = React.lazy(() => import("./pages/MediaGallery"));
 const Layanan = React.lazy(() => import("./pages/Layanan"));
+      //users
+const Users = React.lazy(() => import("./pages/User"));
+const UsersDetail = React.lazy(() => import("./pages/UsersDetail"));
       //reservasi
 const Reservasi = React.lazy(() => import("./pages/Reservasi"));
 const ReservasiDetail = React.lazy(() => import("./pages/ReservasiDetail"));
@@ -54,13 +56,15 @@ function App() {
         {/* {MAIN} */}
         <Route element={<MainLayout />}>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/users" element={<Users />} />
           <Route path="/Artikel" element={<Artikel />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/testimoni" element={<Testimoni />} />
           <Route path="/lowongan" element={<LowonganPekerjaan />} />
           <Route path="/galeri" element={<MediaGaleri />} />
           <Route path="/layanan" element={<Layanan />} />
+            {/* {users} */}
+          <Route path="/users" element={<Users />} />
+          <Route path="/users/:id" element={<UsersDetail />} />
             {/* {reservasi} */}
           <Route path="/reservasi" element={<Reservasi />} />
           <Route path="/reservasi/:id" element={<ReservasiDetail />} />

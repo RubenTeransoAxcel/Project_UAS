@@ -1,3 +1,4 @@
+import { IoIosPeople } from "react-icons/io"; 
 import React, { useEffect, useState } from "react";
 import PageHeader from "../components/PageHeader";
 import { FaShoppingCart, FaCalendarCheck, FaMoneyBill } from "react-icons/fa";
@@ -46,7 +47,7 @@ export default function Dashboard() {
       {/* Statistik Section */}
       <div className="flex flex-wrap gap-4 mt-6">
         <div className="flex-1 min-w-[220px] bg-white p-5 rounded-lg shadow flex items-center space-x-4">
-          <div className="bg-green-500 p-3 rounded-full text-white text-xl">
+          <div className="bg-red-500 p-3 rounded-full text-white text-xl">
             <FaShoppingCart />
           </div>
           <div>
@@ -56,7 +57,7 @@ export default function Dashboard() {
         </div>
 
         <div className="flex-1 min-w-[220px] bg-white p-5 rounded-lg shadow flex items-center space-x-4">
-          <div className="bg-green-600 p-3 rounded-full text-white text-xl">
+          <div className="bg-blue-600 p-3 rounded-full text-white text-xl">
             <FaCalendarCheck />
           </div>
           <div>
@@ -66,12 +67,21 @@ export default function Dashboard() {
         </div>
 
         <div className="flex-1 min-w-[220px] bg-white p-5 rounded-lg shadow flex items-center space-x-4">
-          <div className="bg-yellow-400 p-3 rounded-full text-white text-xl">
+          <div className="bg-yellow-500 p-3 rounded-full text-white text-xl">
             <FaMoneyBill />
           </div>
           <div>
             <div className="text-2xl font-bold">Rp 150.000</div>
             <div className="text-gray-500 text-sm">Total Pemasukan</div>
+          </div>
+        </div>
+        <div className="flex-1 min-w-[220px] bg-white p-5 rounded-lg shadow flex items-center space-x-4">
+          <div className="bg-black p-3 rounded-full text-white text-xl">
+            <IoIosPeople />
+          </div>
+          <div>
+            <div className="text-2xl font-bold">10 Orang</div>
+            <div className="text-gray-500 text-sm">Total Karyawan</div>
           </div>
         </div>
       </div>
