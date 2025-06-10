@@ -3,13 +3,22 @@ import React from "react";
 import { FaBell } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo_no_bg.png"; 
 
 export default function Header() {
   return (
-    <div className="w-full px-6 py- flex justify-end items-center gap-6 rounded-3xl">
-      {/* Notification Icon with Red Dot */}
+    <div className="w-full px-6 py-3 flex justify-between items-center">
+      {/* Logo di Kiri */}
+      <div className="flex items-center">
+        <img
+          src={logo}
+          alt="Logo"
+          className="h-20 w-auto object-contain"
+        />
+      </div>
+
+      {/* Ikon dan User di Kanan */}
       <div id="icons-container" className="flex items-center space-x-4">
-        {/* Icons */}
         <div
           id="notification-icon"
           className="relative p-3 bg-blue-100 rounded-2xl text-blue-500 cursor-pointer hover:shadow-xl shadow-biru hover:-translate-y-1 transition-all duration-300"
@@ -22,6 +31,7 @@ export default function Header() {
             50
           </span>
         </div>
+
         <div
           id="settings-icon"
           className="p-3 bg-red-100 rounded-2xl text-red-500 cursor-pointer hover:shadow-xl shadow-biru hover:-translate-y-1 transition-all duration-300"
