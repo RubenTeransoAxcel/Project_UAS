@@ -1,14 +1,14 @@
-import { IoIosPeople } from "react-icons/io"; 
+import { IoIosPeople } from "react-icons/io";
 import React, { useEffect, useState } from "react";
 import PageHeader from "../components/PageHeader";
 import { FaShoppingCart, FaCalendarCheck, FaMoneyBill } from "react-icons/fa";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Dashboard() {
   const [quote, setQuote] = useState(null);
   const [error, setError] = useState(null);
 
-  
   useEffect(() => {
     const timeout = setTimeout(() => {
       axios
@@ -32,9 +32,25 @@ export default function Dashboard() {
     <div className="flex flex-col w-full">
       <PageHeader title="Home" breadcrumb={["Dashboard", "Home"]} />
 
+      <div className="flex justify-start mt-4">
+        <button>
+          <Link
+            to="https://vamosbarber.vercel.app/"
+            className="bg-coklat hover:bg-coklat2 text-white px-7 py-4 rounded-lg shadow-lg hover:shadow-xl 
+      hover:-translate-y-1 transition-all duration-30 text-lg"
+          >
+            Guest Page
+          </Link>
+        </button>
+      </div>
+
+      <br/>
+
       {/* Quote Section */}
       <div className="bg-white p-5 mt-4 rounded-lg shadow text-center">
-        <h2 className="text-lg font-semibold text-emerald-600">Quote of the Day</h2>
+        <h2 className="text-lg font-semibold text-emerald-600">
+          Quote of the Day
+        </h2>
         {quote ? (
           <p className="mt-2 text-gray-700 italic text-md">"{quote}"</p>
         ) : error ? (

@@ -1,97 +1,202 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import PageHeader from "../components/PageHeader";
+import React, { useEffect, useState } from "react";
+import { MdOutlineDeleteOutline } from "react-icons/md";
+import { FiEdit } from "react-icons/fi";
+import { IoMdAdd } from "react-icons/io";
+import { AiFillEye } from "react-icons/ai";
+import { useNavigate, Link } from "react-router-dom";
+import PageHeader2 from "../components/PageHeader";
 import Pagination from "../components/Pagination";
-import data from "../assets/produk.json";
+import LoadingSpinner from "../components/LoadingSpinner";
+import EmptyState from "../components/EmptyState";
+import AlertBox from "../components/AlertBox";
+import { produkAPI } from "../services/produkAPI";
 
-export default function ProductTable() {
-  const [products, setProducts] = useState(data);
+export default function Produk() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [alert, setAlert] = useState(null);
+  const [form, setForm] = useState({
+    name: "",
+    price: "",
+    stock: "",
+    kategori: "",
+    deskripsi: "",
+    ingredients: "",
+    usage: "",
+    nama_brand: "",
+    negara: "",
+    founded: "",
+    weight: "",
+    gambar: "",
+  });
+  const [editingId, setEditingId] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const navigate = useNavigate();
 
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentItems = products.slice(startIndex, startIndex + itemsPerPage);
-  const totalPages = Math.ceil(products.length / itemsPerPage);
+  const kategoriOptions = ["styling", "perawatan", "alat", "pembersih"];
 
-  const handleDelete = (id) => {
-    const confirmDelete = window.confirm("Yakin ingin menghapus produk ini?");
-    if (confirmDelete) {
-      const updatedProducts = products.filter((item) => item.id !== id);
-      setProducts(updatedProducts);
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      const res = await produkAPI.fetchProduk();
+      setData(res);
+    } catch {
+      setAlert({ type: "error", message: "Gagal mengambil data produk." });
+    } finally {
+      setLoading(false);
     }
   };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const requiredFields = ["name", "price", "stock", "kategori", "deskripsi", "gambar"];
+    if (requiredFields.some((f) => !form[f])) {
+      setAlert({ type: "error", message: "Field wajib tidak boleh kosong." });
+      return;
+    }
+
+    try {
+      if (editingId) {
+        await produkAPI.updateProduk(editingId, form);
+        setAlert({ type: "success", message: "Produk berhasil diperbarui." });
+        setEditingId(null);
+      } else {
+        await produkAPI.createProduk(form);
+        setAlert({ type: "success", message: "Produk berhasil ditambahkan." });
+      }
+      setForm({
+        name: "", price: "", stock: "", kategori: "", deskripsi: "", ingredients: "",
+        usage: "", nama_brand: "", negara: "", founded: "", weight: "", gambar: ""
+      });
+      fetchData();
+    } catch {
+      setAlert({ type: "error", message: "Gagal menyimpan data." });
+    }
+  };
+
+  const handleEdit = (id) => {
+    const item = data.find((d) => d.id === id);
+    if (item) {
+      setForm(item);
+      setEditingId(id);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    if (confirm("Hapus produk ini?")) {
+      try {
+        await produkAPI.deleteProduk(id);
+        setAlert({ type: "success", message: "Produk berhasil dihapus." });
+        fetchData();
+      } catch {
+        setAlert({ type: "error", message: "Gagal menghapus data." });
+      }
+    }
+  };
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentItems = data.slice(startIndex, startIndex + itemsPerPage);
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+
   return (
-    <div className="flex flex-col w-full">
-      <PageHeader title="Produk" breadcrumb={["Dashboard", "Produk"]} />
+    <div className="w-full">
+      <PageHeader2 title="Manajemen Produk" breadcrumb={["Dashboard", "Produk"]} />
 
-      <div className="p-6 bg-white rounded-xl shadow-md overflow-x-auto">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-bold">Daftar Produk Barbershop</h2>
-          <Link
-            to="/produk/tambah"
-            className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md"
-          >
-            Tambah Produk
-          </Link>
-        </div>
+      {/* Form Tambah/Edit Produk */}
+      <div className="mt-6 bg-white rounded-xl shadow-md p-6 max-w-5xl mx-auto mb-10">
+        <h2 className="text-xl font-semibold mb-4">
+          {editingId ? "Edit Produk" : "Tambah Produk"}
+        </h2>
+        {alert && <AlertBox type={alert.type}>{alert.message}</AlertBox>}
+        <form onSubmit={handleSubmit} className="space-y-3">
+          <input name="name" placeholder="Nama Produk" value={form.name} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
+          <input name="price" placeholder="Harga (contoh: 25000)" value={form.price} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
+          <input name="stock" placeholder="Stok" value={form.stock} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
 
-        <table className="w-full text-sm text-left">
-          <thead className="bg-white border-b border-gray-200 text-gray-600 font-medium">
-            <tr>
-              <th className="px-4 py-3">Gambar</th>
-              <th className="px-4 py-3">Nama</th>
-              <th className="px-4 py-3">Harga</th>
-              <th className="px-4 py-3">Stok</th>
-              <th className="px-4 py-3">Kategori</th>
-              <th className="px-4 py-3">Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            {currentItems.map((item, index) => (
-              <tr
-                key={item.id}
-                className={`transition ${index % 2 === 0 ? "bg-white" : "bg-gray-50"} hover:bg-gray-100`}
-              >
-                <td className="px-4 py-2">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-16 h-16 object-cover rounded-md border border-gray-200"
-                  />
-                </td>
-                <td className="px-4 py-2">
-                  <b><Link
-                    to={`/produk/${item.id}`}
-                    className="text-coklat hover:underline"
-                  >
-                    {item.name}
-                  </Link></b>
-                </td>
-                <td className="px-4 py-2 text-gray-800">
-                  Rp {item.price.toLocaleString()}
-                </td>
-                <td className="px-4 py-2 text-gray-800">{item.stock}</td>
-                <td className="px-4 py-2 text-gray-800">{item.category}</td>
-                <td className="px-4 py-2 space-x-2">
-                  <Link
-                    to={`/produk/edit/${item.id}`}
-                    className="bg-blue-500 hover:bg-blue-600 text-white text-sm px-3 py-1 rounded"
-                  >
-                    Edit
-                  </Link>
-                  <button
-                    onClick={() => handleDelete(item.id)}
-                    className="bg-red-500 hover:bg-red-600 text-white text-sm px-3 py-1 rounded cursor-pointer"
-                  >
-                    Hapus
-                  </button>
-                </td>
-              </tr>
+          <select name="kategori" value={form.kategori} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl">
+            <option value="">Pilih Kategori</option>
+            {kategoriOptions.map((opt) => (
+              <option key={opt} value={opt}>{opt}</option>
             ))}
-          </tbody>
-        </table>
+          </select>
+
+          <textarea name="deskripsi" placeholder="Deskripsi" value={form.deskripsi} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
+          <textarea name="ingredients" placeholder="Ingredients" value={form.ingredients} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
+          <textarea name="usage" placeholder="Cara Pakai" value={form.usage} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
+          <input name="nama_brand" placeholder="Nama Brand" value={form.nama_brand} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
+          <input name="negara" placeholder="Negara Asal" value={form.negara} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
+          <input name="founded" placeholder="Tahun Didirikan" value={form.founded} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
+          <input name="weight" placeholder="Berat (contoh: 100ml)" value={form.weight} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
+          <input name="gambar" placeholder="Masukkan link gambar produk" value={form.gambar} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
+          <button type="submit" className="bg-coklat hover:bg-coklat2 text-white px-6 py-2 rounded-xl shadow">
+            {editingId ? "Update" : "Tambah"}
+          </button>
+        </form>
+      </div>
+
+      {/* Tabel Produk */}
+      <div className="mt-6 bg-white rounded-xl shadow-md p-6 max-w-6xl mx-auto">
+        <h2 className="text-xl font-semibold mb-4">Daftar Produk</h2>
+        {loading ? (
+          <LoadingSpinner text="Memuat data produk..." />
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm text-left">
+              <thead className="bg-gray-100 text-gray-700 text-sm">
+                <tr>
+                  <th className="px-6 py-3 border-b">Gambar</th>
+                  <th className="px-6 py-3 border-b">Nama</th>
+                  <th className="px-6 py-3 border-b">Harga</th>
+                  <th className="px-6 py-3 border-b">Stok</th>
+                  <th className="px-6 py-3 border-b">Kategori</th>
+                  <th className="px-6 py-3 border-b text-center">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                {currentItems.map((item, idx) => (
+                  <tr key={item.id} className={`hover:bg-gray-50 ${idx % 2 === 0 ? "bg-white" : "bg-gray-50"}`}>
+                    <td className="px-6 py-3 border-b">
+                      <img src={item.gambar} alt={item.name} className="w-10 h-10 rounded-full object-cover" />
+                    </td>
+                    <td className="px-6 py-3 border-b">{item.name}</td>
+                    <td className="px-6 py-3 border-b">
+                      {Number(item.price).toLocaleString("id-ID", {
+                        style: "currency",
+                        currency: "IDR",
+                      })}
+                    </td>
+                    <td className="px-6 py-3 border-b">{item.stock}</td>
+                    <td className="px-6 py-3 border-b">{item.kategori}</td>
+                    <td className="px-6 py-3 border-b text-center">
+                      <div className="flex justify-center gap-2">
+                        <button onClick={() => handleEdit(item.id)} className="hover:bg-orange-100 rounded-full p-2">
+                          <FiEdit className="text-orange-500 text-xl" />
+                        </button>
+                        <Link to={`/produk/${item.id}`} className="hover:bg-blue-100 rounded-full p-2">
+                          <AiFillEye className="text-blue-500 text-xl" />
+                        </Link>
+                        <button onClick={() => handleDelete(item.id)} className="hover:bg-red-100 rounded-full p-2">
+                          <MdOutlineDeleteOutline className="text-red-500 text-xl" />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            {!loading && data.length === 0 && <EmptyState text="Belum ada produk." />}
+          </div>
+        )}
 
         <Pagination
           currentPage={currentPage}
