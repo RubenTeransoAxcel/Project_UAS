@@ -57,7 +57,7 @@ function App() {
       <Routes>
         {/* {MAIN} */}
         <Route element={<MainLayout />}>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/dashboard-barber" element={<Dashboard />} />
           <Route path="/Artikel" element={<Artikel />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/lowongan" element={<LowonganPekerjaan />} />
@@ -92,7 +92,7 @@ function App() {
         
         {/* {AUTH} */}
         <Route element={<AuthLayout />}>
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot" element={<Forgot />} />
         </Route>

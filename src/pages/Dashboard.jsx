@@ -31,19 +31,6 @@ export default function Dashboard() {
   return (
     <div className="flex flex-col w-full">
       <PageHeader title="Home" breadcrumb={["Dashboard", "Home"]} />
-
-      <div className="flex justify-start mt-4">
-        <button>
-          <Link
-            to="https://vamosbarber.vercel.app/"
-            className="bg-coklat hover:bg-coklat2 text-white px-7 py-4 rounded-lg shadow-lg hover:shadow-xl 
-      hover:-translate-y-1 transition-all duration-30 text-lg"
-          >
-            Guest Page
-          </Link>
-        </button>
-      </div>
-
       <br/>
 
       {/* Quote Section */}

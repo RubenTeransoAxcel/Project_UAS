@@ -5,12 +5,11 @@ import React, { useState } from "react";
 import axios from "axios";
 
 export default function Login() {
-  /* navigate, state & handleChange*/
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [dataForm, setDataForm] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -22,54 +21,34 @@ export default function Login() {
     });
   };
 
-  /* process form */
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setLoading(true);
-    setError(false);
+    setError("");
 
-    axios
-      .post("https://dummyjson.com/user/login", {
-        username: dataForm.email,
+    try {
+      const response = await axios.post("https://dummyjson.com/auth/login", {
+        username: dataForm.username,
         password: dataForm.password,
-      })
-      .then((response) => {
-        // Jika status bukan 200, tampilkan pesan error
-        if (response.status !== 200) {
-          setError(response.data.message);
-          return;
-        }
-
-        // Redirect ke dashboard jika login sukses
-        navigate("/");
-      })
-      .catch((err) => {
-        if (err.response) {
-          setError(err.response.data.message || "An error occurred");
-        } else {
-          setError(err.message || "An unknown error occurred");
-        }
-      })
-      .finally(() => {
-        setLoading(false);
+        expiresInMins: 30,
       });
+
+      // ✅ Simpan token dan user data (optional)
+      localStorage.setItem("accessToken", response.data.token);
+      localStorage.setItem("user", JSON.stringify(response.data));
+
+      // ✅ Navigasi ke dashboard
+      navigate("/dashboard-barber");
+    } catch (err) {
+      if (err.response) {
+        setError(err.response.data.message || "Login gagal");
+      } else {
+        setError("Terjadi kesalahan jaringan");
+      }
+    } finally {
+      setLoading(false);
+    }
   };
-
-  /* error & loading status */
-  const errorInfo = error ? (
-    <div className="bg-red-200 mb-5 p-5 text-sm font-light text-gray-600 rounded flex items-center">
-      <BsFillExclamationDiamondFill className="text-red-600 me-2 text-lg" />
-      {error}
-    </div>
-  ) : null;
-
-  const loadingInfo = loading ? (
-    <div className="bg-gray-200 mb-5 p-5 text-sm rounded flex items-center">
-      <ImSpinner2 className="me-2 animate-spin" />
-      Mohon Tunggu...
-    </div>
-  ) : null;
 
   return (
     <div>
@@ -77,60 +56,74 @@ export default function Login() {
         Login
       </h2>
 
-      {errorInfo}
+      {error && (
+        <div className="bg-red-200 mb-5 p-5 text-sm font-light text-gray-600 rounded flex items-center">
+          <BsFillExclamationDiamondFill className="text-red-600 me-2 text-lg" />
+          {error}
+        </div>
+      )}
 
-      {loadingInfo}
+      {loading && (
+        <div className="bg-gray-200 mb-5 p-5 text-sm rounded flex items-center">
+          <ImSpinner2 className="me-2 animate-spin" />
+          Mohon Tunggu...
+        </div>
+      )}
 
       <form onSubmit={handleSubmit}>
         <div className="mb-5">
           <label className="block text-sm font-medium text-white mb-1">
-            Email Address
+            Username
           </label>
           <input
             type="text"
-            id="email"
-            name="email"
-            className="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm
-                            placeholder-gray-400"
-            placeholder="you@example.com"
+            name="username"
+            value={dataForm.username}
             onChange={handleChange}
+            className="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400"
+            placeholder="emilys"
+            required
           />
         </div>
+
         <div className="mb-6">
           <label className="block text-sm font-medium text-white mb-1">
             Password
           </label>
           <input
             type="password"
-            id="password"
             name="password"
-            className="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm
-                            placeholder-gray-400"
-            placeholder="********"
+            value={dataForm.password}
             onChange={handleChange}
+            className="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400"
+            placeholder="emilyspass"
+            required
           />
         </div>
+
         <button
           type="submit"
-          className="w-full bg-biru hover:bg-blue-900 text-white font-semibold py-2 px-4
-                        rounded-lg transition duration-300"
+          className="w-full bg-biru hover:bg-blue-900 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
         >
           Login
         </button>
-        <button
-          type="button"
-          onClick={() => navigate("/forgot")}
-          className="text-biru hover:underline"
-        >
-          Forgot Password?
-        </button>
-        <button
-          type="button"
-          onClick={() => navigate("/register")}
-          className="text-biru hover:underline"
-        >
-          Create Account
-        </button>
+
+        <div className="flex justify-between mt-4">
+          <button
+            type="button"
+            onClick={() => navigate("/forgot")}
+            className="text-biru hover:underline text-sm"
+          >
+            Forgot Password?
+          </button>
+          <button
+            type="button"
+            onClick={() => navigate("/register")}
+            className="text-biru hover:underline text-sm"
+          >
+            Create Account
+          </button>
+        </div>
       </form>
     </div>
   );

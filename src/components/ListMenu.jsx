@@ -32,7 +32,7 @@ export default function ListMenu() {
     <div id="sidebar-menu" className="px-5 mt-2 space-y-2">
       <ul id="menu-list" className="space-y-1">
         <li>
-          <NavLink to="/" className={menuClass}>
+          <NavLink to="/dashboard-barber" className={menuClass}>
             <FaHome className="mr-4 text-xl" />
             Dashboard
           </NavLink>
