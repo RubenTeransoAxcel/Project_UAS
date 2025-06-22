@@ -1,5 +1,6 @@
 // Sidebar.jsx
 import ListMenu from "./ListMenu";
+import logo from "../assets/logo (2).png";
 
 export default function Sidebar() {
   return (
@@ -8,6 +9,7 @@ export default function Sidebar() {
       <div>
         {/* Logo */}
         <div className="p-5">
+          <center><img src={logo} alt="Logo" className="h-20 w-auto object-contain" /></center>
           <h1 className="text-2xl font-bold">Vamos Barbershop</h1>
           <p className="text-gray-300 text-sm mt-1">-Admin-</p>
         </div>
