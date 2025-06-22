@@ -59,7 +59,14 @@ export default function Produk() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const requiredFields = ["name", "price", "stock", "kategori", "deskripsi", "gambar"];
+    const requiredFields = [
+      "name",
+      "price",
+      "stock",
+      "kategori",
+      "deskripsi",
+      "gambar",
+    ];
     if (requiredFields.some((f) => !form[f])) {
       setAlert({ type: "error", message: "Field wajib tidak boleh kosong." });
       return;
@@ -75,8 +82,18 @@ export default function Produk() {
         setAlert({ type: "success", message: "Produk berhasil ditambahkan." });
       }
       setForm({
-        name: "", price: "", stock: "", kategori: "", deskripsi: "", ingredients: "",
-        usage: "", nama_brand: "", negara: "", founded: "", weight: "", gambar: ""
+        name: "",
+        price: "",
+        stock: "",
+        kategori: "",
+        deskripsi: "",
+        ingredients: "",
+        usage: "",
+        nama_brand: "",
+        negara: "",
+        founded: "",
+        weight: "",
+        gambar: "",
       });
       fetchData();
     } catch {
@@ -110,7 +127,10 @@ export default function Produk() {
 
   return (
     <div className="w-full">
-      <PageHeader2 title="Manajemen Produk" breadcrumb={["Dashboard", "Produk"]} />
+      <PageHeader2
+        title="Manajemen Produk"
+        breadcrumb={["Dashboard", "Produk"]}
+      />
 
       {/* Form Tambah/Edit Produk */}
       <div className="mt-6 bg-white rounded-xl shadow-md p-6 max-w-5xl mx-auto mb-10">
@@ -118,27 +138,151 @@ export default function Produk() {
           {editingId ? "Edit Produk" : "Tambah Produk"}
         </h2>
         {alert && <AlertBox type={alert.type}>{alert.message}</AlertBox>}
-        <form onSubmit={handleSubmit} className="space-y-3">
-          <input name="name" placeholder="Nama Produk" value={form.name} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
-          <input name="price" placeholder="Harga (contoh: 25000)" value={form.price} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
-          <input name="stock" placeholder="Stok" value={form.stock} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="text-sm font-medium">Nama Produk</label>
+              <input
+                name="name"
+                placeholder="Contoh: Hair Wax Matte"
+                value={form.name}
+                onChange={handleChange}
+                className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
+              />
+            </div>
 
-          <select name="kategori" value={form.kategori} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl">
-            <option value="">Pilih Kategori</option>
-            {kategoriOptions.map((opt) => (
-              <option key={opt} value={opt}>{opt}</option>
-            ))}
-          </select>
+            <div>
+              <label className="text-sm font-medium">Harga</label>
+              <input
+                name="price"
+                placeholder="Contoh: 25000"
+                value={form.price}
+                onChange={handleChange}
+                className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
+              />
+            </div>
 
-          <textarea name="deskripsi" placeholder="Deskripsi" value={form.deskripsi} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
-          <textarea name="ingredients" placeholder="Ingredients" value={form.ingredients} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
-          <textarea name="usage" placeholder="Cara Pakai" value={form.usage} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
-          <input name="nama_brand" placeholder="Nama Brand" value={form.nama_brand} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
-          <input name="negara" placeholder="Negara Asal" value={form.negara} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
-          <input name="founded" placeholder="Tahun Didirikan" value={form.founded} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
-          <input name="weight" placeholder="Berat (contoh: 100ml)" value={form.weight} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
-          <input name="gambar" placeholder="Masukkan link gambar produk" value={form.gambar} onChange={handleChange} className="w-full p-2 bg-gray-50 border rounded-xl" />
-          <button type="submit" className="bg-coklat hover:bg-coklat2 text-white px-6 py-2 rounded-xl shadow">
+            <div>
+              <label className="text-sm font-medium">Stok</label>
+              <input
+                name="stock"
+                placeholder="Jumlah stok tersedia"
+                value={form.stock}
+                onChange={handleChange}
+                className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
+              />
+            </div>
+
+            <div>
+              <label className="text-sm font-medium">Kategori</label>
+              <select
+                name="kategori"
+                value={form.kategori}
+                onChange={handleChange}
+                className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
+              >
+                <option value="">Pilih Kategori</option>
+                {kategoriOptions.map((opt) => (
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="text-sm font-medium">Nama Brand</label>
+              <input
+                name="nama_brand"
+                placeholder="Contoh: Gatsby, PomadeX"
+                value={form.nama_brand}
+                onChange={handleChange}
+                className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
+              />
+            </div>
+
+            <div>
+              <label className="text-sm font-medium">Negara Asal</label>
+              <input
+                name="negara"
+                placeholder="Contoh: Jepang, Indonesia"
+                value={form.negara}
+                onChange={handleChange}
+                className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
+              />
+            </div>
+
+            <div>
+              <label className="text-sm font-medium">Tahun Didirikan</label>
+              <input
+                name="founded"
+                placeholder="Contoh: 2012"
+                value={form.founded}
+                onChange={handleChange}
+                className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
+              />
+            </div>
+
+            <div>
+              <label className="text-sm font-medium">Berat Produk</label>
+              <input
+                name="weight"
+                placeholder="Contoh: 100ml atau 200gr"
+                value={form.weight}
+                onChange={handleChange}
+                className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
+              />
+            </div>
+
+            <div className="md:col-span-2">
+              <label className="text-sm font-medium">Link Gambar Produk</label>
+              <input
+                name="gambar"
+                placeholder="URL gambar produk"
+                value={form.gambar}
+                onChange={handleChange}
+                className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="text-sm font-medium">Deskripsi</label>
+            <textarea
+              name="deskripsi"
+              placeholder="Deskripsi produk secara umum"
+              value={form.deskripsi}
+              onChange={handleChange}
+              className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
+            />
+          </div>
+
+          <div>
+            <label className="text-sm font-medium">Ingredients</label>
+            <textarea
+              name="ingredients"
+              placeholder="Bahan-bahan produk jika ada"
+              value={form.ingredients}
+              onChange={handleChange}
+              className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
+            />
+          </div>
+
+          <div>
+            <label className="text-sm font-medium">Cara Pakai</label>
+            <textarea
+              name="usage"
+              placeholder="Panduan pemakaian produk"
+              value={form.usage}
+              onChange={handleChange}
+              className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="bg-coklat hover:bg-coklat2 text-white px-6 py-2 rounded-xl shadow mt-4"
+          >
             {editingId ? "Update" : "Tambah"}
           </button>
         </form>
@@ -164,9 +308,18 @@ export default function Produk() {
               </thead>
               <tbody>
                 {currentItems.map((item, idx) => (
-                  <tr key={item.id} className={`hover:bg-gray-50 ${idx % 2 === 0 ? "bg-white" : "bg-gray-50"}`}>
+                  <tr
+                    key={item.id}
+                    className={`hover:bg-gray-50 ${
+                      idx % 2 === 0 ? "bg-white" : "bg-gray-50"
+                    }`}
+                  >
                     <td className="px-6 py-3 border-b">
-                      <img src={item.gambar} alt={item.name} className="w-10 h-10 rounded-full object-cover" />
+                      <img
+                        src={item.gambar}
+                        alt={item.name}
+                        className="w-10 h-10 rounded-full object-cover"
+                      />
                     </td>
                     <td className="px-6 py-3 border-b">{item.name}</td>
                     <td className="px-6 py-3 border-b">
@@ -179,13 +332,22 @@ export default function Produk() {
                     <td className="px-6 py-3 border-b">{item.kategori}</td>
                     <td className="px-6 py-3 border-b text-center">
                       <div className="flex justify-center gap-2">
-                        <button onClick={() => handleEdit(item.id)} className="hover:bg-orange-100 rounded-full p-2">
+                        <button
+                          onClick={() => handleEdit(item.id)}
+                          className="hover:bg-orange-100 rounded-full p-2"
+                        >
                           <FiEdit className="text-orange-500 text-xl" />
                         </button>
-                        <Link to={`/produk/${item.id}`} className="hover:bg-blue-100 rounded-full p-2">
+                        <Link
+                          to={`/produk/${item.id}`}
+                          className="hover:bg-blue-100 rounded-full p-2"
+                        >
                           <AiFillEye className="text-blue-500 text-xl" />
                         </Link>
-                        <button onClick={() => handleDelete(item.id)} className="hover:bg-red-100 rounded-full p-2">
+                        <button
+                          onClick={() => handleDelete(item.id)}
+                          className="hover:bg-red-100 rounded-full p-2"
+                        >
                           <MdOutlineDeleteOutline className="text-red-500 text-xl" />
                         </button>
                       </div>
@@ -194,7 +356,9 @@ export default function Produk() {
                 ))}
               </tbody>
             </table>
-            {!loading && data.length === 0 && <EmptyState text="Belum ada produk." />}
+            {!loading && data.length === 0 && (
+              <EmptyState text="Belum ada produk." />
+            )}
           </div>
         )}
 
