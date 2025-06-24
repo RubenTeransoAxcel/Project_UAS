@@ -27,10 +27,6 @@ export default function Header() {
 
   return (
     <div className="w-full px-6 py-3 flex justify-end">
-      {/* Logo */}
-      {/* <div className="flex items-center">
-        <img src={logo} alt="Logo" className="h-40 w-auto object-contain" />
-      </div> */}
 
       {/* Ikon kanan */}
       <div className="flex items-center space-x-4 relative">
