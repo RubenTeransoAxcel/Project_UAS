@@ -32,6 +32,8 @@ export default function Produk() {
   const [editingId, setEditingId] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedKategori, setSelectedKategori] = useState("");
   const navigate = useNavigate();
 
   const kategoriOptions = ["styling", "perawatan", "alat", "pembersih"];
@@ -121,16 +123,25 @@ export default function Produk() {
     }
   };
 
+  const filteredData = data.filter((item) => {
+    const matchesSearch =
+      item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.nama_brand.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.negara.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.price.toString().includes(searchTerm);
+    const matchesKategori = selectedKategori
+      ? item.kategori === selectedKategori
+      : true;
+    return matchesSearch && matchesKategori;
+  });
+
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentItems = data.slice(startIndex, startIndex + itemsPerPage);
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const currentItems = filteredData.slice(startIndex, startIndex + itemsPerPage);
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
   return (
     <div className="w-full">
-      <PageHeader2
-        title="Manajemen Produk"
-        breadcrumb={["Dashboard", "Produk"]}
-      />
+      <PageHeader2 title="Manajemen Produk" breadcrumb={["Dashboard", "Produk"]} />
 
       {/* Form Tambah/Edit Produk */}
       <div className="mt-6 bg-white rounded-xl shadow-md p-6 max-w-5xl mx-auto mb-10">
@@ -150,7 +161,6 @@ export default function Produk() {
                 className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
               />
             </div>
-
             <div>
               <label className="text-sm font-medium">Harga</label>
               <input
@@ -161,7 +171,6 @@ export default function Produk() {
                 className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
               />
             </div>
-
             <div>
               <label className="text-sm font-medium">Stok</label>
               <input
@@ -172,7 +181,6 @@ export default function Produk() {
                 className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
               />
             </div>
-
             <div>
               <label className="text-sm font-medium">Kategori</label>
               <select
@@ -189,7 +197,6 @@ export default function Produk() {
                 ))}
               </select>
             </div>
-
             <div>
               <label className="text-sm font-medium">Nama Brand</label>
               <input
@@ -200,7 +207,6 @@ export default function Produk() {
                 className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
               />
             </div>
-
             <div>
               <label className="text-sm font-medium">Negara Asal</label>
               <input
@@ -211,7 +217,6 @@ export default function Produk() {
                 className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
               />
             </div>
-
             <div>
               <label className="text-sm font-medium">Tahun Didirikan</label>
               <input
@@ -222,7 +227,6 @@ export default function Produk() {
                 className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
               />
             </div>
-
             <div>
               <label className="text-sm font-medium">Berat Produk</label>
               <input
@@ -233,7 +237,6 @@ export default function Produk() {
                 className="w-full p-2 bg-gray-50 border rounded-xl mt-1"
               />
             </div>
-
             <div className="md:col-span-2">
               <label className="text-sm font-medium">Link Gambar Produk</label>
               <input
@@ -291,6 +294,30 @@ export default function Produk() {
       {/* Tabel Produk */}
       <div className="mt-6 bg-white rounded-xl shadow-md p-6 max-w-6xl mx-auto">
         <h2 className="text-xl font-semibold mb-4">Daftar Produk</h2>
+
+        {/* Filter & Search */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
+          <input
+            type="text"
+            placeholder="Cari berdasarkan nama, brand, negara, atau harga..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full md:w-2/3 px-4 py-2 border rounded-xl bg-gray-50"
+          />
+          <select
+            value={selectedKategori}
+            onChange={(e) => setSelectedKategori(e.target.value)}
+            className="w-full md:w-1/3 px-4 py-2 border rounded-xl bg-gray-50"
+          >
+            <option value="">Semua Kategori</option>
+            {kategoriOptions.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </select>
+        </div>
+
         {loading ? (
           <LoadingSpinner text="Memuat data produk..." />
         ) : (
@@ -356,8 +383,8 @@ export default function Produk() {
                 ))}
               </tbody>
             </table>
-            {!loading && data.length === 0 && (
-              <EmptyState text="Belum ada produk." />
+            {!loading && filteredData.length === 0 && (
+              <EmptyState text="Tidak ada produk ditemukan." />
             )}
           </div>
         )}
