@@ -55,7 +55,7 @@ export default function ErrorPage({
 
         {/* Tombol kembali */}
         <Link
-          to="/"
+          to="/dashboard-barber"
           className="mt-6 inline-block text-sm font-medium text-gray-700 border border-gray-500 bg-green-400 px-6 py-2 rounded-md hover:bg-gray-200 transition"
         >
           Back to Home
