@@ -8,10 +8,10 @@ import {
 import { IoIosPeople } from "react-icons/io";
 import {
   BarChart, Bar, PieChart, Pie, LineChart, Line,
-  XAxis, YAxis, Tooltip, Legend, CartesianGrid,
-  ResponsiveContainer, Cell
+  XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, Cell
 } from "recharts";
 import { produkAPI } from "../services/produkAPI";
+import { karyawanAPI } from "../services/karyawanAPI";
 import reservasiData from "../assets/reservasi.json";
 
 export default function Dashboard() {
@@ -20,29 +20,52 @@ export default function Dashboard() {
   const [produkStats, setProdukStats] = useState([]);
   const [reservasiStats, setReservasiStats] = useState([]);
   const [pemasukanStats, setPemasukanStats] = useState([]);
+  const [produkTerjual, setProdukTerjual] = useState(0);
+  const [totalReservasi, setTotalReservasi] = useState(0);
+  const [totalPemasukan, setTotalPemasukan] = useState(0);
+  const [totalKaryawan, setTotalKaryawan] = useState(0);
 
   useEffect(() => {
     // Ambil data produk & hitung stok per kategori
     produkAPI.fetchProduk().then((produk) => {
       const kategoriGroup = {};
+      let totalProduk = 0;
+
       produk.forEach(p => {
-        kategoriGroup[p.kategori] = (kategoriGroup[p.kategori] || 0) + parseInt(p.stock || 0);
+        const stok = parseInt(p.stock || 0);
+        kategoriGroup[p.kategori] = (kategoriGroup[p.kategori] || 0) + stok;
+        totalProduk += stok;
       });
+
       const formatted = Object.entries(kategoriGroup).map(([kategori, total]) => ({ kategori, total }));
       setProdukStats(formatted);
+      setProdukTerjual(totalProduk);
     });
 
-    // Hitung jumlah reservasi & pemasukan per tanggal
+    // Hitung jumlah reservasi & pemasukan dari file lokal
     const byDate = {};
     const pemasukanByDate = {};
+    let totalRes = 0;
+    let totalIncome = 0;
+
     reservasiData.forEach(r => {
       const tgl = r.Tanggal;
+      const harga = r["Total Harga"] || 0;
       byDate[tgl] = (byDate[tgl] || 0) + 1;
-      pemasukanByDate[tgl] = (pemasukanByDate[tgl] || 0) + (r["Total Harga"] || 0);
+      pemasukanByDate[tgl] = (pemasukanByDate[tgl] || 0) + harga;
+      totalRes += 1;
+      totalIncome += harga;
     });
 
     setReservasiStats(Object.entries(byDate).map(([tgl, jumlah]) => ({ tgl, jumlah })));
     setPemasukanStats(Object.entries(pemasukanByDate).map(([tgl, jumlah]) => ({ tgl, jumlah })));
+    setTotalReservasi(totalRes);
+    setTotalPemasukan(totalIncome);
+
+    // Ambil data karyawan
+    karyawanAPI.fetchKaryawan().then(data => {
+      setTotalKaryawan(data.length);
+    });
   }, []);
 
   useEffect(() => {
@@ -50,7 +73,7 @@ export default function Dashboard() {
       fetch("https://api.adviceslip.com/advice")
         .then((res) => res.json())
         .then((data) => setQuote(data.slip.advice))
-        .catch((err) => setError("Gagal mengambil quote."));
+        .catch(() => setError("Gagal mengambil quote."));
     }, 300);
     return () => clearTimeout(timeout);
   }, []);
@@ -74,10 +97,10 @@ export default function Dashboard() {
 
       {/* Statistik */}
       <div className="flex flex-wrap gap-4 mt-6">
-        <StatCard icon={<FaShoppingCart />} color="bg-red-500" value="20" label="Produk Terjual" />
-        <StatCard icon={<FaCalendarCheck />} color="bg-blue-600" value="8" label="Total Reservasi" />
-        <StatCard icon={<FaMoneyBill />} color="bg-yellow-500" value="Rp 150.000" label="Total Pemasukan" />
-        <StatCard icon={<IoIosPeople />} color="bg-black" value="10 Orang" label="Total Karyawan" />
+        <StatCard icon={<FaShoppingCart />} color="bg-red-500" value={produkTerjual} label="Total Produk" />
+        <StatCard icon={<FaCalendarCheck />} color="bg-blue-600" value={totalReservasi} label="Total Reservasi" />
+        <StatCard icon={<FaMoneyBill />} color="bg-yellow-500" value={`Rp ${totalPemasukan.toLocaleString("id-ID")}`} label="Total Pemasukan" />
+        <StatCard icon={<IoIosPeople />} color="bg-black" value={`${totalKaryawan} Orang`} label="Total Karyawan" />
       </div>
 
       {/* Grafik */}
@@ -135,7 +158,7 @@ export default function Dashboard() {
   );
 }
 
-// Komponen kecil untuk menyederhanakan struktur
+// Komponen kecil
 const StatCard = ({ icon, color, value, label }) => (
   <div className="flex-1 min-w-[220px] bg-white p-5 rounded-lg shadow flex items-center space-x-4">
     <div className={`${color} p-3 rounded-full text-white text-xl`}>
