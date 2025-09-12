@@ -1,0 +1,1 @@
+import{j as e}from"./index-B2A0ZtH7.js";function t(){return e.jsxs("div",{className:" flex flex-col justify-center items-center min-h-screen bg-white",children:[e.jsx("div",{className:"w-12 h-12 border-4 border-black border-t-transparent rounded-full animate-spin mb-4"}),e.jsx("p",{className:"text-black text-lg",children:"Loading..."})]})}export{t as default};

@@ -1,0 +1,1 @@
+import{j as e,O as r}from"./index-B2A0ZtH7.js";function t(){return e.jsx("div",{className:"flex items-center justify-center min-h-screen bg-gray-100 p-8",children:e.jsx("div",{className:"max-w-2xl w-full",children:e.jsx(r,{})})})}export{t as default};
